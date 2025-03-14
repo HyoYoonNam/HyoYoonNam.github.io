@@ -1,0 +1,704 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Java</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="80edcfdf-5d58-42ba-a1be-e483a0986aac" class="page sans"><header><h1 class="page-title">Java</h1><p class="page-description"></p></header><div class="page-body"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="af0beb29-d635-42a2-ba2e-831e3d61dcfb" class="code"><code class="language-Java">System.out.println(&quot;Write Once Run Everywhere!&quot;);</code></pre><blockquote id="76d7d67d-11ce-49e7-9774-9edafe4e36f0" class="">안드로이드(네이티브): 자바, 코틀린</blockquote><p id="cff8d8ca-39d3-4626-ab84-fcf6bb382e29" class="">→ 안드로이드는 코틀린이 압도적 대세(추후에도 코틀린이 우세, 왜냐하면 구글에서 안드로이드 개발용 공식 언어를 코틀린으로 선언)</p><p id="a174530d-3e28-4642-9a4f-03d2d1a2a5c9" class="">→ 서버 백엔드, 웹개발은 자바가 우세</p><blockquote id="d603b8fd-7f8f-4c7d-95d2-8fb7bcc66f5c" class="">ios(네이티브): 스위프트</blockquote><blockquote id="65b98689-ab40-4b88-943a-2cfd5bfe60ff" class="">크로스플랫폼: 리액트네이티브, 플루터</blockquote><p id="ed9e029d-ce4b-4dd5-8056-b00c858b0a87" class="">Java는 lowerCamelCase(= camelCase)로 명명한다.</p><p id="f24d89f2-330e-441f-bddc-4708f1c7723f" class="">참고로 UpperCamelCase = PascalCase이다.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="28063552-303a-4b3e-a831-6d67b0eadc0e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">자바의 네이밍 관례<br/>변수명은 <br/><mark class="highlight-orange">camelCase</mark>,<br/>클래스명은 <br/><mark class="highlight-orange">PascalCase</mark>,<br/>상수(<br/><code>static final</code>)는 <mark class="highlight-orange">UPPER_SNAKE_CASE</mark><br/>를 사용한다.<br/></div></figure><figure id="16d8153b-1841-465a-a64a-846b06613af6" class="link-to-page"><a href="https://www.notion.so/Java-16d8153b1841465aa64a846b06613af6?pvs=21">Java-김영한 입문</a></figure><figure id="15faea86-f18d-4d5f-80bd-68a746a1ee46" class="link-to-page"><a href="https://www.notion.so/Java-15faea86f18d4d5f80bd68a746a1ee46?pvs=21">Java-김영한 기본</a></figure><figure id="0eb5f0a2-6d98-45f5-818b-e28a8ed5cc3b" class="link-to-page"><a href="https://www.notion.so/Java-1-0eb5f0a26d9845f5818be28a8ed5cc3b?pvs=21">Java-김영한 중급-1</a></figure><figure id="1823a35c-b1a1-8085-bd9c-d260b4cd2914" class="link-to-page"><a href="https://www.notion.so/Java-2-1823a35cb1a18085bd9cd260b4cd2914?pvs=21">Java-김영한 중급-2</a></figure><figure id="18e3a35c-b1a1-8035-898a-cd433adc8c94" class="link-to-page"><a href="https://www.notion.so/Java-1-18e3a35cb1a18035898acd433adc8c94?pvs=21">Java-김영한 고급-1</a></figure><figure id="18e3a35c-b1a1-80eb-91ce-efcd68f7c6e6" class="link-to-page"><a href="https://www.notion.so/Java-2-18e3a35cb1a180eb91ceefcd68f7c6e6?pvs=21">Java-김영한 고급-2</a></figure><figure id="18e3a35c-b1a1-80a6-b08b-cded37bf0d03" class="link-to-page"><a href="https://www.notion.so/Java-3-18e3a35cb1a180a6b08bcded37bf0d03?pvs=21">Java-김영한 고급-3</a></figure><figure id="e1b80783-6320-46e1-9f84-43ec760d12a9" class="image"><a href="Java%2080edcfdf5d5842baa1bee483a0986aac/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_10.54.53.png"><img style="width:648px" src="Java%2080edcfdf5d5842baa1bee483a0986aac/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-03-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_10.54.53.png"/></a><figcaption>자바 | 김영한의 실전 자바<br/>스프링 | 스프링 완전 정복 코스 → 스프링 부트와 JPA 실무 완전 정복 로드맵<br/></figcaption></figure><hr id="2b3c527d-4886-4712-ad27-d091f48b6b7d"/><table id="5a6209c5-fa45-4fd4-90f0-25900cdacb36" class="simple-table"><thead class="simple-table-header"><tr id="58ed7695-9a7a-4727-b443-9a0885b0af88"><th id="XWaZ" class="simple-table-header-color simple-table-header">IntelliJ shortcuts</th><th id="uroV" class="simple-table-header-color simple-table-header"></th></tr></thead><tbody><tr id="8e4f317a-897a-4ffb-b82e-1be450701457"><td id="XWaZ" class="">control + R</td><td id="uroV" class="">Run recent code</td></tr><tr id="188485be-dc0d-4adc-a11f-addeeb074daa"><td id="XWaZ" class="">control + shift + R</td><td id="uroV" class="">Run current code</td></tr><tr id="03b9677c-6f04-4878-9ac2-f6c19af206ea"><td id="XWaZ" class="">option + return</td><td id="uroV" class="">fixing suggests</td></tr><tr id="601b815b-0e99-467e-b353-0799caf4a996"><td id="XWaZ" class="">control + D</td><td id="uroV" class="">start debugging</td></tr><tr id="582b7cb7-4def-4870-92d2-099ae311a18a"><td id="XWaZ" class="">command + F8</td><td id="uroV" class="">breakpoint</td></tr><tr id="1033a35c-b1a1-802a-a0fa-cc7b82b852a7"><td id="XWaZ" class="">F8</td><td id="uroV" class="">Step Over</td></tr><tr id="1033a35c-b1a1-8038-8434-dcd996884315"><td id="XWaZ" class="">F7</td><td id="uroV" class="">Step Into</td></tr><tr id="f7ff06d4-0e0b-4b12-9a2e-c7470b86e600"><td id="XWaZ" class="">command + shift + enter</td><td id="uroV" class="">Complete Current Statement(line)</td></tr><tr id="c9e0101f-b004-49fb-8e3b-2e0f97d07f17"><td id="XWaZ" class="">command + E</td><td id="uroV" class="">show recent files</td></tr><tr id="9d7f5a7e-6f17-4b2f-a2af-b2b55db40aca"><td id="XWaZ" class="">command+option+V</td><td id="uroV" class="">Introduce Variable : return type이 존재하는 method를 call하는 line에서 사용하면 variable을 자동으로 추론해서  define해준다.</td></tr><tr id="1093a35c-b1a1-803c-b5b8-c284809f6db3"><td id="XWaZ" class="">ctrl+ 윗방향키</td><td id="uroV" class="">extend selection.<br/>현재 마우스 커서 있는 부분의 단어를 선택해줌.<br/>ctrl아니고 option일 수도<br/></td></tr><tr id="10d3a35c-b1a1-80b5-8146-de1eed7c00c2"><td id="XWaZ" class="">option + enter</td><td id="uroV" class="">intellij가 추천하는 작업 리스트 제공(생성자 만들기, 메서드 만들기, …)</td></tr><tr id="1183a35c-b1a1-80a4-b2c0-c8d2a467321d"><td id="XWaZ" class="">command + N → t → Enter</td><td id="uroV" class="">toString() overriding</td></tr><tr id="1363a35c-b1a1-80c3-b887-d9bc8d12297a"><td id="XWaZ" class="">command + shift + V</td><td id="uroV" class="">Clipboard History에서 paste할 것을 선택 가능</td></tr><tr id="1833a35c-b1a1-8078-b331-c0a500ec78a9"><td id="XWaZ" class="">shift + F6</td><td id="uroV" class="">rename(이름 리팩터링)<br/>쉬프트로 특정단어 미리 긁어놓고 하면 해당하는 단어들 모두 함께 바뀜<br/></td></tr><tr id="1843a35c-b1a1-8059-902b-e2ed13da9e05"><td id="XWaZ" class="">F6</td><td id="uroV" class="">move(경로 리팩터링)</td></tr><tr id="1873a35c-b1a1-80b2-a6e0-cecb02b31b77"><td id="XWaZ" class="">list.size()<code>.soutv</code> + 엔터</td><td id="uroV" class="">System.out.println(”list.size() = “ + list.size());로 변환해 줌</td></tr><tr id="1a13a35c-b1a1-80e0-98c3-c62c7a962e05"><td id="XWaZ" class="">command + 윗화살표</td><td id="uroV" class="">현재 소스코드에 있는 코드 블록 리스트(메서드, 클래스 등등…)를 보여줌. 특정 블록 선택시 해당 위치로 이동</td></tr><tr id="1ad3a35c-b1a1-80af-aa8f-cb63121b0927"><td id="XWaZ" class="">option + F1<br/>또는<br/>command + 1<br/></td><td id="uroV" class="">Project 메뉴바 쪽으로 선택 위치 이동<br/>(키보드만 사용하여 새 파일을 만들 때 용이함)<br/></td></tr><tr id="1ad3a35c-b1a1-807b-a4d9-ff73314b93af"><td id="XWaZ" class="">command + 4</td><td id="uroV" class="">Output 쪽으로 선택 위치 이동<br/>(키보드만 사용하여 새 파일을 만들 때 용이함)<br/></td></tr></tbody></table><p id="750b9315-039a-4510-b4e5-1a536649d3a7" class=""><strong>다운로드 한 소스코드 불러오기:</strong><div class="indented"><p id="9c7ec297-940b-470a-a6ba-28698437e367" class="">File → New → Project from existing sources…</p></div></p><figure id="5f7cf5bb-2bd2-42df-91db-fd215c143c58" class="link-to-page"><a href="https://www.notion.so/Java-Compile-on-CLI-5f7cf5bb2bd242df91dbfd215c143c58?pvs=21">Java Compile on CLI</a></figure><figure id="8c9e573e-602e-49e3-b813-13fd6bf34edd" class="link-to-page"><a href="https://www.notion.so/Java-main-void-return-return-exit-JVM-8c9e573e602e49e3b81313fd6bf34edd?pvs=21">Java의 main()은 왜 void를 return할까? | return과 exit | JVM의 역할</a></figure><figure id="3b3d14de-ebf4-459d-9e3b-31cf730131d2" class="link-to-page"><a href="https://www.notion.so/C-Uniform-Initialization-3b3d14deebf4459d9e3b31cf730131d2?pvs=21">C++에서의 Uniform Initialization</a></figure><figure id="7d3e3474-6483-4a1f-b6ba-8b57e6e05791" class="link-to-page"><a href="https://www.notion.so/C-type-conversion-7d3e347464834a1fb6ba8b57e6e05791?pvs=21">C++로 배우는 type conversion</a></figure><figure id="a3f61a30-366b-4e13-ba5d-e3da13daeefc" class="link-to-page"><a href="https://www.notion.so/Java-unsigned-a3f61a30366b4e13ba5de3da13daeefc?pvs=21">Java에는 unsigned가 없다</a></figure><ul id="417b1e57-77b9-4236-9fc6-8a05e7847b84" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.notion.so/7-scanner-4e7d05a4b6dd4f5785bf1aa0e9f0130d?pvs=21">do-while statement의 block scope</a></li></ul><figure id="eddb34da-b9eb-477c-af7a-c07227c90592" class="link-to-page"><a href="https://www.notion.so/new-keyword-eddb34dab9eb477caf7ac07227c90592?pvs=21">‘new’ keyword</a></figure><figure id="e44c9179-6932-4a86-afbf-17af4a356412" class="link-to-page"><a href="https://www.notion.so/stream-buffer-e44c917969324a86afbf17af4a356412?pvs=21">stream과 buffer</a></figure><figure id="04b57299-4265-47eb-bbca-cdef7eb671b4" class="link-to-page"><a href="https://www.notion.so/while-statement-04b57299426547ebbbcacdef7eb671b4?pvs=21">while statement를 더 똑똑하게 사용하기</a></figure><figure id="4633912c-e9d6-4759-931c-65a7311e56b1" class="link-to-page"><a href="https://www.notion.so/local-variable-auto-initialized-4633912ce9d64759931c65a7311e56b1?pvs=21">local variable의 auto-initialized</a></figure><figure id="77c8c975-4766-41f0-99ce-2f0e3b1eea4c" class="link-to-page"><a href="https://www.notion.so/Java-JDK-77c8c975476641f099ce2f0e3b1eea4c?pvs=21">Java 버전과 JDK 버전</a></figure><figure id="06c977f2-8648-45e0-b58d-0bd6741f4909" class="link-to-page"><a href="https://www.notion.so/Java-printf-06c977f2864845e0b58d0bd6741f4909?pvs=21">Java에서도 printf()를 사용할 수 있다.</a></figure><figure id="e83a4032-b4ed-48d0-96bd-c92c16cfbbf9" class="link-to-page"><a href="https://www.notion.so/Java-Method-call-Memory-allocated-e83a4032b4ed48d096bdc92c16cfbbf9?pvs=21">Java에서의 Method call과 Memory allocated</a></figure><figure id="7a83ee25-e0b9-4979-9837-33d059d491a3" class="link-to-page"><a href="https://www.notion.so/JVM-JRE-JDK-7a83ee25e0b94979983733d059d491a3?pvs=21">JVM, JRE, JDK</a></figure><figure id="dd095d78-92eb-48a7-86c0-e5e85e9429b2" class="link-to-page"><a href="https://www.notion.so/JVM-JRE-JDK-dd095d7892eb48a786c0e5e85e9429b2?pvs=21">잡설 JVM, JRE, JDK</a></figure><figure id="1dc93318-659b-437e-8fa6-e9440fa696d0" class="link-to-page"><a href="https://www.notion.so/Java-Source-file-suffix-Class_name-java-1dc93318659b437e8fa6e9440fa696d0?pvs=21">Java에서는 왜 Source file의 suffix(확장자)가 `Class_name.java`일까?</a></figure><figure id="27bc76e7-e104-4384-a4b4-eeb2d3b28355" class="link-to-page"><a href="https://www.notion.so/Primitive-type-Built-in-type-Reference-type-27bc76e7e1044384a4b4eeb2d3b28355?pvs=21">Primitive type, Built-in type, Reference type</a></figure><figure id="df975a02-c878-45a9-97c1-72218e473c8f" class="link-to-page"><a href="https://www.notion.so/var-keyword-df975a02c87845a997c172218e473c8f?pvs=21">변수 타입 추론 기능 - `var` keyword</a></figure><figure id="1bc9692f-c1d3-4239-8f00-249e34f3270a" class="link-to-page"><a href="https://www.notion.so/UNICODE-Encoding-Method-UTF-8-1bc9692fc1d342398f00249e34f3270a?pvs=21">UNICODE Encoding Method, UTF-8</a></figure><figure id="a8b5426e-88f0-429c-bc42-a1c352b3a11f" class="link-to-page"><a href="https://www.notion.so/Garbage-Collection-a8b5426e88f0429cbc42a1c352b3a11f?pvs=21">Garbage Collection의 동작</a></figure><figure id="e29c13d9-763b-4cdb-902d-ba8fa45fd359" class="link-to-page"><a href="https://www.notion.so/Method-Implementation-Method-Extraction-e29c13d9763b4cdb902dba8fa45fd359?pvs=21">Method Implementation과 Method Extraction</a></figure><figure id="201da8a2-4c56-4307-b59c-a22a93082f37" class="link-to-page"><a href="https://www.notion.so/201da8a24c564307b59ca22a93082f37?pvs=21">길이를 반환하는 법</a></figure><figure id="1083a35c-b1a1-80c7-8342-d9add26fcdea" class="link-to-page"><a href="https://www.notion.so/ArrayList-array-1083a35cb1a180c78342d9add26fcdea?pvs=21">ArrayList: 가변 길이를 가지는 array</a></figure><figure id="1183a35c-b1a1-80c7-b9f7-d4ac17228c37" class="link-to-page"><a href="https://www.notion.so/1183a35cb1a180c7b9f7d4ac17228c37?pvs=21">정적 의존관계와 동적 의존관계</a></figure><figure id="1193a35c-b1a1-80a7-95f8-ef196745799e" class="link-to-page"><a href="https://www.notion.so/annotation-Override-explicit-1193a35cb1a180a795f8ef196745799e?pvs=21">annotation을 통해서 @Override를 explicit하게 선언하는 이유</a></figure><figure id="11a3a35c-b1a1-8089-9816-e16c793bd658" class="link-to-page"><a href="https://www.notion.so/hashcode-memory-address-11a3a35cb1a180899816e16c793bd658?pvs=21">hashcode와 memory address</a></figure><figure id="11a3a35c-b1a1-80c9-9c15-c74604d70399" class="link-to-page"><a href="https://www.notion.so/11a3a35cb1a180c99c15c74604d70399?pvs=21">실제 타입과 참조 타입</a></figure><figure id="11a3a35c-b1a1-80a6-a636-efc5dadb21fc" class="link-to-page"><a href="https://www.notion.so/Immutable-Object-naming-convention-11a3a35cb1a180a6a636efc5dadb21fc?pvs=21">Immutable Object의 값을 변경하는 메서드의 naming convention</a></figure><figure id="11a3a35c-b1a1-8021-8345-e5a70431c095" class="link-to-page"><a href="https://www.notion.so/String-Immutable-11a3a35cb1a180218345e5a70431c095?pvs=21">String과 Immutable</a></figure><figure id="11b3a35c-b1a1-80f5-a0d2-e9d3b029cad0" class="link-to-page"><a href="https://www.notion.so/Java-C-11b3a35cb1a180f5a0d2e9d3b029cad0?pvs=21">Java와 C에서의 문자 배열 차이</a></figure><figure id="11b3a35c-b1a1-80f1-85d4-c8fa6e010340" class="link-to-page"><a href="https://www.notion.so/11b3a35cb1a180f185d4c8fa6e010340?pvs=21">문자열을 생성하는 두 가지 방법</a></figure><figure id="11b3a35c-b1a1-8094-8dad-d2d538e1a0a7" class="link-to-page"><a href="https://www.notion.so/Java-String-11b3a35cb1a180948dadd2d538e1a0a7?pvs=21">Java String의 다양한 인코딩 환경 지원</a></figure><figure id="11b3a35c-b1a1-809b-af75-f26e15349ad1" class="link-to-page"><a href="https://www.notion.so/String-a-b-a-concat-b-11b3a35cb1a1809baf75f26e15349ad1?pvs=21">(미완) String 객체 a + b와 a.concat(b)의 차이</a></figure><figure id="11d3a35c-b1a1-8040-a945-e2af476ff04a" class="link-to-page"><a href="https://www.notion.so/Interface-static-default-JAVA-8-9-11d3a35cb1a18040a945e2af476ff04a?pvs=21">Interface, static, default - JAVA 8 &amp; 9</a></figure><figure id="11d3a35c-b1a1-8028-ac8d-df91ce6f06c0" class="link-to-page"><a href="https://www.notion.so/trim-strip-11d3a35cb1a18028ac8ddf91ce6f06c0?pvs=21">기본 공백과 유니코드 공백, trim()과 strip()</a></figure><figure id="11d3a35c-b1a1-8081-b704-ca2c7ae879d0" class="link-to-page"><a href="https://www.notion.so/String-formatting-11d3a35cb1a18081b704ca2c7ae879d0?pvs=21">String formatting</a></figure><p id="11d3a35c-b1a1-80eb-9c18-dd14aedb3b5d" class=""><a href="https://www.notion.so/08-1-2-regular-expressions-ff24a7f312de4ad2be469fd587070d75?pvs=21">08-1~2. regular expressions</a> </p><figure id="1203a35c-b1a1-80e3-a8a7-cbb90ee8f406" class="link-to-page"><a href="https://www.notion.so/extends-implements-1203a35cb1a180e3a8a7cbb90ee8f406?pvs=21">extends와 implements. 구현의 필수 여부</a></figure><figure id="1213a35c-b1a1-806e-a2fa-e55ef7c53440" class="link-to-page"><a href="https://www.notion.so/Java-GUI-API-awt-swing-1213a35cb1a1806ea2fae55ef7c53440?pvs=21">Java GUI API - awt와 swing</a></figure><figure id="12c3a35c-b1a1-8078-a47e-fb6b619d1796" class="link-to-page"><a href="https://www.notion.so/Integer-Wrapper-Class-Pool-range-12c3a35cb1a18078a47efb6b619d1796?pvs=21">Integer Wrapper Class의 Pool range</a></figure><figure id="12e3a35c-b1a1-802b-9d8b-ec1156d18f53" class="link-to-page"><a href="https://www.notion.so/Wrapper-String-Primitive-12e3a35cb1a1802b9d8bec1156d18f53?pvs=21">Wrapper ↔ String ↔ Primitive 간의 변환</a></figure><figure id="12e3a35c-b1a1-807b-8085-c9813fdeb2c6" class="link-to-page"><a href="https://www.notion.so/throw-e-12e3a35cb1a1807b8085c9813fdeb2c6?pvs=21">단일 예외 처리와 이중 예외 처리, throw(e)</a></figure><figure id="12f3a35c-b1a1-804f-b429-de0533b7c5c9" class="link-to-page"><a href="https://www.notion.so/main-String-args-main-String-argv-12f3a35cb1a1804fb429de0533b7c5c9?pvs=21">main(String[] args)와 main(String argv[])</a></figure><figure id="13b3a35c-b1a1-80c7-9371-e4368501c4c0" class="link-to-page"><a href="https://www.notion.so/13b3a35cb1a180c79371e4368501c4c0?pvs=21">암호화와 해싱</a></figure><figure id="18e3a35c-b1a1-801e-ba48-e191dea9f5b3" class="link-to-page"><a href="https://www.notion.so/String-equals-Objects-equals-18e3a35cb1a1801eba48e191dea9f5b3?pvs=21">String의 equals()와 Objects.equals()</a></figure><figure id="18e3a35c-b1a1-806d-8240-c19bd0b80384" class="link-to-page"><a href="https://www.notion.so/java-util-Objects-18e3a35cb1a1806d8240c19bd0b80384?pvs=21">java.util.Objects</a></figure><figure id="18e3a35c-b1a1-806b-bbef-cf44c52e1870" class="link-to-page"><a href="https://www.notion.so/extends-implements-18e3a35cb1a1806bbbefcf44c52e1870?pvs=21">extends, implements</a></figure><figure id="18e3a35c-b1a1-80a7-bd52-c8659fc381be" class="link-to-page"><a href="https://www.notion.so/Iterable-Iterator-for-each-loop-18e3a35cb1a180a7bd52c8659fc381be?pvs=21">(수정 필요) Iterable, Iterator, for-each loop</a></figure><figure id="1943a35c-b1a1-8040-8838-cdde1d7fbb23" class="link-to-page"><a href="https://www.notion.so/Thread-State-Interrupt-Status-1943a35cb1a180408838cdde1d7fbb23?pvs=21">Thread State, Interrupt Status</a></figure><figure id="1943a35c-b1a1-803e-ac8c-fb64074346d5" class="link-to-page"><a href="https://www.notion.so/yield-1943a35cb1a1803eac8cfb64074346d5?pvs=21">yield() 수행 유무에 따른 체크로직 수행횟수 비교</a></figure><figure id="1943a35c-b1a1-802d-abad-e31f88a43334" class="link-to-page"><a href="https://www.notion.so/scanner-hasNextInt-EOF-1943a35cb1a1802dabade31f88a43334?pvs=21">scanner.hasNextInt()와 입력 종료, EOF</a></figure><figure id="1953a35c-b1a1-807e-9820-e6072e66a00b" class="link-to-page"><a href="https://www.notion.so/Context-Swtiching-thread-state-1953a35cb1a1807e9820e6072e66a00b?pvs=21">Context Swtiching과 자바의 thread state</a></figure><figure id="1963a35c-b1a1-8082-bcb4-c53e6bffc346" class="link-to-page"><a href="https://www.notion.so/synchronized-1963a35cb1a18082bcb4c53e6bffc346?pvs=21">자바에서 synchronized는 객체 단위로 지정된다.</a></figure><figure id="19b3a35c-b1a1-804f-94e1-d2d599825461" class="link-to-page"><a href="https://www.notion.so/19b3a35cb1a1804f94e1d2d599825461?pvs=21">내가 했던 답변 중 좋은 답변</a></figure><figure id="1a63a35c-b1a1-80e3-a201-e7efa7cc9f93" class="link-to-page"><a href="https://www.notion.so/isTerminated-1a63a35cb1a180e3a201e7efa7cc9f93?pvs=21">내 답변: isTerminated()</a></figure><figure id="1a73a35c-b1a1-80ec-8305-d0a8924d13a5" class="link-to-page"><a href="https://www.notion.so/wrapping-method-override-compile-time-1a73a35cb1a180ec8305d0a8924d13a5?pvs=21">상위타입 wrapping과 method override, compile time</a></figure><figure id="1aa3a35c-b1a1-80ad-8626-c67e450aad51" class="link-to-page"><a href="https://www.notion.so/prestartCoreThread-AllCoreThreads-1aa3a35cb1a180ad8626c67e450aad51?pvs=21">prestartCoreThread()와 AllCoreThreads()</a></figure><figure id="1ab3a35c-b1a1-800c-a854-f087b1060187" class="link-to-page"><a href="https://www.notion.so/TCP-IP-1ab3a35cb1a1800ca854f087b1060187?pvs=21">TCP와 IP, 도착 순서 보장</a></figure><figure id="1ab3a35c-b1a1-80f4-94ca-e86c779348e2" class="link-to-page"><a href="https://www.notion.so/JSON-1ab3a35cb1a180f494cae86c779348e2?pvs=21">JSON과 자바스크립트</a></figure><figure id="1ab3a35c-b1a1-80f7-bd94-cfaab1c24fc0" class="link-to-page"><a href="https://www.notion.so/MSA-1ab3a35cb1a180f7bd94cfaab1c24fc0?pvs=21">MSA와 단위 모듈의 차이</a></figure><figure id="1ab3a35c-b1a1-800c-9516-e6e88c2abb4b" class="link-to-page"><a href="https://www.notion.so/MSA-Kafka-1ab3a35cb1a1800c9516e6e88c2abb4b?pvs=21">MSA와 비동기통신, Kafka, 메시지 큐</a></figure><figure id="1b33a35c-b1a1-8019-aecc-f2818667f5c8" class="link-to-page"><a href="https://www.notion.so/println-char-1b33a35cb1a18019aeccf2818667f5c8?pvs=21">println()에서 두 개 이상의 char을 연달아 출력할 경우</a></figure><p id="1ab3a35c-b1a1-804f-9295-cb9827b7db89" class="">
+</p><figure id="1ab3a35c-b1a1-801c-9285-cf3c8dc54b83" class="link-to-page"><a href="https://www.notion.so/1ab3a35cb1a1801c9285cf3c8dc54b83?pvs=21">(블로그 쓸 것)정처기 문제 복기, 다형성</a></figure><div><ul id="1b23a35c-b1a1-805d-a868-fd566e788f4e" class="toggle"><li><details open=""><summary><strong>nextInt와 nextLine()의 비교 - gpt</strong></summary><h3 id="1b23a35c-b1a1-8098-adc8-c384b96b3a68" class=""><strong>📌 성능 차이 분석 (</strong><code><strong>scanner.nextLine()</strong></code><strong> vs </strong><code><strong>scanner.nextInt()</strong></code><strong>)</strong></h3><h3 id="1b23a35c-b1a1-802a-97a5-e4736dc301ec" class=""><strong>결과 요약</strong></h3><table id="1b23a35c-b1a1-806f-8fec-e7702e3de63d" class="simple-table"><tbody><tr id="1b23a35c-b1a1-80e5-83f0-f342428c0934"><td id="fYDW" class="">코드</td><td id="Eg@L" class="">메모리 사용량</td><td id="}nz@" class="">실행 시간</td></tr><tr id="1b23a35c-b1a1-8010-9543-f552a67299a3"><td id="fYDW" class=""><strong>코드 1 (</strong><code><strong>scanner.nextLine()</strong></code><strong>)</strong></td><td id="Eg@L" class=""><code>17624KB</code></td><td id="}nz@" class=""><code>168ms</code></td></tr><tr id="1b23a35c-b1a1-8090-81f1-c41d3b983cf1"><td id="fYDW" class=""><strong>코드 2 (</strong><code><strong>scanner.nextInt()</strong></code><strong>)</strong></td><td id="Eg@L" class=""><code>17700KB</code></td><td id="}nz@" class=""><code>180ms</code></td></tr></tbody></table><p id="1b23a35c-b1a1-8050-a718-d9af27dcea44" class=""><strong>✅ 분석 결과:</strong></p><ul id="1b23a35c-b1a1-8008-ba2b-db23fe8128c1" class="bulleted-list"><li style="list-style-type:disc"><code><strong>scanner.nextLine()</strong></code><strong>을 사용한 코드가 더 빠름 (</strong><code><strong>168ms</strong></code><strong> vs </strong><code><strong>180ms</strong></code><strong>)</strong></li></ul><ul id="1b23a35c-b1a1-8079-aefb-ec6e3e8e7241" class="bulleted-list"><li style="list-style-type:disc"><strong>메모리 사용량도 </strong><code><strong>scanner.nextLine()</strong></code><strong>이 더 적음 (</strong><code><strong>17624KB</strong></code><strong> vs </strong><code><strong>17700KB</strong></code><strong>)</strong></li></ul><ul id="1b23a35c-b1a1-800c-a654-f18136e39fe7" class="bulleted-list"><li style="list-style-type:disc">입력을 <strong>한 번만 받는 것이 더 효율적이라는 예측이 맞음!</strong> 🚀</li></ul><hr id="1b23a35c-b1a1-80ed-b6fd-c1be64bc6e6d"/><h2 id="1b23a35c-b1a1-8073-809b-dde0298a54f3" class=""><strong>📌 왜 </strong><code><strong>scanner.nextLine()</strong></code><strong>이 더 빠를까?</strong></h2><h3 id="1b23a35c-b1a1-80d8-b1d1-fdbe378562a7" class="">1️⃣ <code><strong>scanner.nextInt()</strong></code><strong>는 여러 번 호출되면서 추가적인 처리 비용이 발생</strong></h3><ul id="1b23a35c-b1a1-807a-838a-de8873625a47" class="bulleted-list"><li style="list-style-type:disc"><strong>코드 1 (</strong><code><strong>scanner.nextLine()</strong></code><strong>)</strong><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1b23a35c-b1a1-80d4-a9dd-f706842c9b5a" class="code"><code class="language-Java" style="white-space:pre-wrap;word-break:break-all">String[] userInput = scanner.nextLine().split(&quot; &quot;);
+</code></pre><ul id="1b23a35c-b1a1-8055-85df-f120c619ee81" class="bulleted-list"><li style="list-style-type:circle"><strong>한 번의 입력</strong> (<code>nextLine()</code>)으로 문자열 전체를 가져옴.</li></ul><ul id="1b23a35c-b1a1-8098-8687-c78511ad57d4" class="bulleted-list"><li style="list-style-type:circle">이후 <code>split(&quot; &quot;)</code>을 사용해 배열로 변환.</li></ul><ul id="1b23a35c-b1a1-8031-a9fb-f2426e3751bd" class="bulleted-list"><li style="list-style-type:circle"><strong>I/O 연산이 한 번만 발생</strong> → 성능 이점.</li></ul></li></ul><ul id="1b23a35c-b1a1-80a3-bdda-e88bb8e96bae" class="bulleted-list"><li style="list-style-type:disc"><strong>코드 2 (</strong><code><strong>scanner.nextInt()</strong></code><strong>)</strong><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1b23a35c-b1a1-808d-96ac-d47be4f5d8be" class="code"><code class="language-Java" style="white-space:pre-wrap;word-break:break-all">int a = scanner.nextInt();
+int b = scanner.nextInt();
+</code></pre><ul id="1b23a35c-b1a1-804b-913c-d8fc1ad5fb05" class="bulleted-list"><li style="list-style-type:circle"><code><strong>scanner.nextInt()</strong></code><strong>를 두 번 호출</strong> → 입력을 두 번 받음.</li></ul><ul id="1b23a35c-b1a1-80af-af69-ce9b29b5f8ed" class="bulleted-list"><li style="list-style-type:circle">내부적으로 <code>nextInt()</code>는 <strong>공백을 무시하는 작업 및 타입 변환을 추가적으로 수행</strong>.</li></ul><ul id="1b23a35c-b1a1-80a1-858c-d5463ff5445b" class="bulleted-list"><li style="list-style-type:circle">이 과정에서 <strong>여러 번의 I/O 연산이 발생</strong> → 실행 시간이 증가.</li></ul></li></ul><hr id="1b23a35c-b1a1-80ca-b1c6-c5ba55c0b9f1"/><h3 id="1b23a35c-b1a1-801d-991e-c65da169a9f3" class="">2️⃣ <code><strong>scanner.nextInt()</strong></code><strong>는 내부적으로 </strong><code><strong>nextLine()</strong></code><strong>을 호출하고 추가 처리</strong></h3><ul id="1b23a35c-b1a1-80ff-8105-d3f97b12f267" class="bulleted-list"><li style="list-style-type:disc"><code>scanner.nextInt()</code>는 입력을 정수로 변환할 때, 내부적으로 입력 버퍼를 처리하는 과정이 필요함.</li></ul><ul id="1b23a35c-b1a1-802c-aa62-f6cf3e30818b" class="bulleted-list"><li style="list-style-type:disc">하지만 <code>scanner.nextLine()</code>은 <strong>그냥 한 번에 문자열을 가져오므로 I/O 연산이 적게 발생</strong>.</li></ul><ul id="1b23a35c-b1a1-8051-80e9-d0437104cf4a" class="bulleted-list"><li style="list-style-type:disc">따라서 <strong>한 번에 입력을 받은 후, </strong><code><strong>split()</strong></code><strong>으로 나누는 것이 더 빠름</strong>.</li></ul><hr id="1b23a35c-b1a1-8005-9231-f413fc130568"/><h2 id="1b23a35c-b1a1-808c-b7bc-cceac43de1c7" class=""><strong>📌 결론: 언제 </strong><code><strong>nextLine()</strong></code><strong>과 </strong><code><strong>nextInt()</strong></code><strong>를 사용할까?</strong></h2><table id="1b23a35c-b1a1-8052-9186-c984f72e3bb4" class="simple-table"><tbody><tr id="1b23a35c-b1a1-8075-bf5f-f50b3335af3e"><td id="BLpB" class="">상황</td><td id="kjHw" class="">추천 입력 방식</td></tr><tr id="1b23a35c-b1a1-8053-aac3-e664ff468f55"><td id="BLpB" class="">한 줄 입력을 받아 숫자로 변환해야 할 때</td><td id="kjHw" class=""><code><strong>scanner.nextLine()</strong></code><strong> + </strong><code><strong>split()</strong></code> (더 빠름)</td></tr><tr id="1b23a35c-b1a1-8037-8f18-c1f5b6a2d0a1"><td id="BLpB" class="">입력이 여러 줄로 주어질 때</td><td id="kjHw" class=""><code><strong>scanner.nextInt()</strong></code> (여러 줄 입력 시 유용)</td></tr><tr id="1b23a35c-b1a1-80c8-80bd-c7aae6662a59"><td id="BLpB" class="">공백을 포함한 문자열 입력이 필요할 때</td><td id="kjHw" class=""><code><strong>scanner.nextLine()</strong></code> (문자열 전체 입력 가능)</td></tr></tbody></table><hr id="1b23a35c-b1a1-80ac-9351-e2620915a25d"/><h2 id="1b23a35c-b1a1-80a5-b05a-f7ab65f30224" class=""><strong>📌 개선 가능한 점</strong></h2><h3 id="1b23a35c-b1a1-8080-9de1-c97909522bf2" class=""><strong>🚀 </strong><code><strong>BufferedReader</strong></code><strong> + </strong><code><strong>StringTokenizer</strong></code><strong> 사용</strong></h3><ul id="1b23a35c-b1a1-8001-b007-d6aa50f99765" class="bulleted-list"><li style="list-style-type:disc"><code>Scanner</code>는 편리하지만, <strong>속도가 상대적으로 느림</strong>.</li></ul><ul id="1b23a35c-b1a1-80c4-8a41-d13c009c71ea" class="bulleted-list"><li style="list-style-type:disc"><code><strong>BufferedReader</strong></code><strong> + </strong><code><strong>StringTokenizer</strong></code> 조합을 사용하면 훨씬 더 빠르게 처리 가능.</li></ul><p id="1b23a35c-b1a1-8072-8b04-d1a8886fe8bd" class=""><strong>📌 개선된 코드 (더 빠름)</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1b23a35c-b1a1-80e9-8e5d-ca1041a182f8" class="code"><code class="language-Java" style="white-space:pre-wrap;word-break:break-all">import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
+
+        System.out.println(a - b);
+    }
+}
+</code></pre><h3 id="1b23a35c-b1a1-8029-82cf-df1a9a2cfb76" class=""><strong>🚀 성능 예상</strong></h3><table id="1b23a35c-b1a1-8002-8a2d-db4d403fb7b9" class="simple-table"><tbody><tr id="1b23a35c-b1a1-8073-865b-f8423f1c0884"><td id="AknP" class="">코드</td><td id="k]u~" class="">예상 실행 시간</td><td id="fysn" class="">예상 메모리</td></tr><tr id="1b23a35c-b1a1-800e-b78b-e6ef17d2f8b9"><td id="AknP" class=""><strong>Scanner + </strong><code><strong>nextLine()</strong></code></td><td id="k]u~" class="">168ms</td><td id="fysn" class="">17624KB</td></tr><tr id="1b23a35c-b1a1-8082-8791-c1a2a024c24a"><td id="AknP" class=""><strong>Scanner + </strong><code><strong>nextInt()</strong></code></td><td id="k]u~" class="">180ms</td><td id="fysn" class="">17700KB</td></tr><tr id="1b23a35c-b1a1-8093-861d-fe4eb99a4ad6"><td id="AknP" class=""><strong>BufferedReader + StringTokenizer</strong></td><td id="k]u~" class="">🚀 100~120ms</td><td id="fysn" class="">💡 더 적음</td></tr></tbody></table><p id="1b23a35c-b1a1-807e-9eb2-f58ba2d36c3c" class="">✅ <code><strong>BufferedReader</strong></code><strong>가 </strong><code><strong>Scanner</strong></code><strong>보다 빠른 이유</strong></p><ul id="1b23a35c-b1a1-8033-823c-e457fc13ebfe" class="bulleted-list"><li style="list-style-type:disc"><code><strong>Scanner</strong></code><strong>는 내부적으로 정규식을 사용</strong>하여 입력을 파싱하는데, 이 과정이 느림.</li></ul><ul id="1b23a35c-b1a1-8079-8046-cfa0ac146207" class="bulleted-list"><li style="list-style-type:disc"><code><strong>BufferedReader</strong></code><strong>는 단순한 문자열 입출력만 처리</strong>하여 훨씬 빠름.</li></ul><ul id="1b23a35c-b1a1-8084-8647-d1d9ab30366f" class="bulleted-list"><li style="list-style-type:disc"><code><strong>StringTokenizer</strong></code><strong>는 </strong><code><strong>split(&quot; &quot;)</strong></code><strong>보다 빠르게 문자열을 분리</strong>.</li></ul><hr id="1b23a35c-b1a1-808c-a8a5-ce9605dbc4f9"/><h2 id="1b23a35c-b1a1-8094-967e-ed6c88a89cae" class=""><strong>📌 최종 결론</strong></h2><p id="1b23a35c-b1a1-802f-9e58-c640303cdf82" class="">✔ <strong>입력을 한 번만 받는 </strong><code><strong>scanner.nextLine()</strong></code><strong> 방식이 더 빠름 (</strong><code><strong>168ms</strong></code><strong> vs </strong><code><strong>180ms</strong></code><strong>).</strong></p><p id="1b23a35c-b1a1-80ac-b4fa-e8bf596ecbb3" class="">✔ <code><strong>scanner.nextInt()</strong></code><strong>는 내부적으로 버퍼를 처리하는 과정이 있어 더 느림.</strong></p><p id="1b23a35c-b1a1-809b-993a-c6ac7d218fe3" class="">✔ <strong>성능 최적화를 위해 </strong><code><strong>BufferedReader + StringTokenizer</strong></code><strong>를 사용하는 것이 좋음.</strong></p><p id="1b23a35c-b1a1-8035-8e5c-c8722b5110f6" class="">🚀 <strong>즉, 빠른 입력 처리가 필요할 때는 </strong><code><strong>BufferedReader + StringTokenizer</strong></code><strong>를 적극 활용하자!</strong> 🚀</p></details></li></ul></div><figure id="1b43a35c-b1a1-8098-9e7d-efd5f178eeb5" class="link-to-page"><a href="https://www.notion.so/true-Boolean-TRUE-1b43a35cb1a180989e7defd5f178eeb5?pvs=21">true, Boolean.TRUE, 캐싱, 싱글턴 객체</a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
