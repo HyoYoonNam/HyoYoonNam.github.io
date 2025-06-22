@@ -1,9 +1,9 @@
-title: Parchment
-author: pro-panda
+title: HyoYoonNam's Blog
+author: HyoYoonNam
 subtitle: The life of a frustrated engineer
 
-url: "https://rahulbothra.com"
-baseurl: "/parchment"
+url: "https://HyoYoonNam.github.io"
+baseurl: ""
 
 footer_only_homepage: true
 footer_url: "https://github.com/rhl-bthr"
