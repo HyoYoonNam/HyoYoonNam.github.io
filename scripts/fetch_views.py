@@ -4,7 +4,7 @@ import os
 
 owner = "HyoYoonNam"
 repo = "HyoYoonNam.github.io"
-token = os.environ["token"]  # GitHub Actions에서 환경변수로 전달받음
+token = os.environ["PERSONAL_ACCESS_TOKEN"]  # GitHub Actions에서 환경변수로 전달받음
 
 headers = {
     "Accept": "application/vnd.github+json",

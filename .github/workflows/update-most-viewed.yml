@@ -20,6 +20,9 @@ jobs:
       - name: Install Python dependencies
         run: pip install pyyaml requests
 
+      - name: Ensure _data folder exists
+        run: mkdir -p _data
+        
       - name: Run fetch_views.py
         run: |
           python scripts/fetch_views.py
@@ -34,6 +37,5 @@ jobs:
           git commit -m "🔄 Update most viewed posts"
           git push
 
-      - name: Ensure _data folder exists
-        run: mkdir -p _data
+      
 
