@@ -34,3 +34,6 @@ jobs:
           git commit -m "🔄 Update most viewed posts"
           git push
 
+      - name: Ensure _data folder exists
+        run: mkdir -p _data
+
