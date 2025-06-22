@@ -8,7 +8,7 @@ token = os.environ["token"]  # GitHub Actions에서 환경변수로 전달받음
 
 headers = {
     "Accept": "application/vnd.github+json",
-    "Authorization": f"token {token}",
+    "Authorization": f"token {token.strip()}",
 }
 
 url = f"https://api.github.com/repos/{owner}/{repo}/traffic/popular/paths"
