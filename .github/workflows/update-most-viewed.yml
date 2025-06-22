@@ -1,0 +1,36 @@
+name: Update Most Viewed Posts
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # 매일 오전 10시 (KST)
+  workflow_dispatch: # 이게 있어야 수동 실행 가능
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Python dependencies
+        run: pip install pyyaml requests
+
+      - name: Run fetch_views.py
+        run: |
+          python scripts/fetch_views.py
+        env:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+      - name: Commit & push changes
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add _data/most_viewed_posts.yml
+          git commit -m "🔄 Update most viewed posts"
+          git push
+

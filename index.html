@@ -2,6 +2,26 @@
 layout: default
 ---
 
+<h2>Most Viewed</h2>
+<div class="most-viewed-section">
+  {% for post in site.posts %}
+    {% assign slug = post.url | split: '/' | last | remove: '/' %}
+    {% if site.data.most_viewed_posts contains slug %}
+      <div class="post-card featured">
+        <a class="title" href="{{ site.baseurl }}{{ post.url }}">⭐ {{ post.title }}</a>
+        <div class="details">
+          <b>{{ post.date | date: "%d %B %Y" }}</b>
+        </div>
+        <div class="subtitle">
+          {{ post.subtitle }}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+<hr>
+
+
 {% assign has_post = false %}
 {% for post in site.posts %}
     {% if post.private == true %}
