@@ -6,27 +6,28 @@ theme: jekyll-theme-chirpy
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
-lang: en
+lang: ko-KR
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
-timezone: Asia/Shanghai
+timezone: Asia/Seoul
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: HyoYoon의 취준 블로그 # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the subtitle
+tagline: 백엔드 개발자 취업 준비를 목표로 내 스스로의 사고를 재구조화 하는 공간  # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  Java, Spring(Boot)를 중심으로 한 언어와 프레임워크 학습, 코딩 테스트 준비, 프로젝트 진행에 대한 과정을 재구조화 해서 정리하는 공간입니다.
+  지식은 여러 단계를 거칠수록 더욱 풍부해진다고 믿습니다.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: ""
+url: "https://HyoYoonNam.github.io"
 
 github:
-  username: github_username # change to your GitHub username
+  username: HyoYoonNam # change to your GitHub username
 
 twitter:
   username: twitter_username # change to your Twitter username
@@ -34,13 +35,14 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@domain.com # change to your email address
+  name: HyoYoonNam
+  email: dev.rudevico@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/username # change to your GitHub homepage
+    # - https://twitter.com/username # change to your Twitter homepage
+    - https://github.com/HyoYoonNam # change to your GitHub homepage
     # Uncomment below to add more social links
+    - https://www.linkedin.com/in/HyoYoonNam
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
