@@ -22,4 +22,10 @@ package-lock.json
 !.vscode/extensions.json
 !.vscode/tasks.json
 
+# Obsidian files
+.obsidian/
+templates/
+
 # Misc
+.DS_Store
+
