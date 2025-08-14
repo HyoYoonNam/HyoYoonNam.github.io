@@ -6,27 +6,29 @@ theme: jekyll-theme-chirpy
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
-lang: en
+lang: ko-KR
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
-timezone:
+timezone: Asia/Seoul
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: HyoYoon의 백엔드 개발 블로그 # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the subtitle
+tagline: 백엔드 개발자로 취업을 준비하면서의 여정을 기록합니다. # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  백엔드 개발자로 취업하기 위한 준비 과정을 담은 블로그입니다.
+  CS 전범위에 대한 내용에 대해 다루고, Java 언어와 Spring 프레임 워크를 사용합니다.
+  이외에 github.io 블로그를 옵시디언과 함께 사용하여 효율적으로 관리할 수 있는 방법도 다룹니다.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: ""
+url: "https://HyoYoonNam.github.io"
 
 github:
-  username: github_username # change to your GitHub username
+  username: "HyoYoonNam" # change to your GitHub username
 
 twitter:
   username: twitter_username # change to your Twitter username
@@ -34,15 +36,15 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@domain.com # change to your email address
+  name: HyoYoonNam
+  email: dev.rudevico@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/username # change to your GitHub homepage
+    # - https://twitter.com/username # change to your Twitter homepage
+    - https://github.com/HyoYoonNam # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/HyoYoonNam
 
 # Site Verification Settings
 webmaster_verifications:
@@ -215,6 +217,7 @@ exclude:
   - purgecss.js
   - "*.config.js"
   - "package*.json"
+  - templates # 옵시디언 템플릿 디렉토리
 
 jekyll-archives:
   enabled: [categories, tags]
