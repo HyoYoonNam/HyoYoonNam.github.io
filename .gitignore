@@ -26,6 +26,9 @@ package-lock.json
 .obsidian/
 templates/
 
+# 임시 작성 post
+_drafts/
+
 # Misc
 .DS_Store
 
