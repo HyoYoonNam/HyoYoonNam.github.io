@@ -15,7 +15,6 @@ export class TocDesktop {
   }
 
   static init() {
-    console.log("CUSTOM TOC-DESKTOP.JS LOADED!"); 
     tocbot.init(this.options);
   }
 }
