@@ -9,3 +9,12 @@
 ';
 
 /* append your custom style below */
+
+/* toc(목차) 부분에서 하위 수준의 제목들이 접혀있다가(collapse) 해당 부분으로 이동할 때만 펴지는 옵션을 무시
+ * 즉 하위 목차까지 항상 펼쳐져서 보이도록 하기
+ * 출처: https://github.com/cotes2020/jekyll-theme-chirpy/discussions/1706
+ * 관련 블로그 포스팅 작성: https://hyoyoonnam.github.io/posts/tocbot-목차-접히는-collapse-설정-해제하기/
+ */
+.is-collapsed {
+  max-height: none !important;
+}
