@@ -60,7 +60,7 @@ webmaster_verifications:
 # The end of `jekyll-seo-tag` settings
 
 # Web Analytics Settings
-
+analytics:
   google:
     id: G-1BTQ5NW093 # fill in your Google Analytics ID
   goatcounter:
