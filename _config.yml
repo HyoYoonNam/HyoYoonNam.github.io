@@ -48,7 +48,8 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: # fill in your Google verification code
+  # 구글 서치 콘솔 -> 설정 -> 추가 확인 방법: HTML 태그 -> content="이 부분 복사"
+  google: MpUXs1cY0YU852yOOrtuI5ol_-eWWklSZtPgX1ttkIs # fill in your Google verification code
   bing: # fill in your Bing verification code
   alexa: # fill in your Alexa verification code
   yandex: # fill in your Yandex verification code
@@ -59,9 +60,9 @@ webmaster_verifications:
 # The end of `jekyll-seo-tag` settings
 
 # Web Analytics Settings
-analytics:
+
   google:
-    id: # fill in your Google Analytics ID
+    id: G-1BTQ5NW093 # fill in your Google Analytics ID
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
