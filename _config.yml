@@ -220,6 +220,7 @@ exclude:
   - "*.config.js"
   - "package*.json"
   - templates # 옵시디언 템플릿 디렉토리
+  - google13ecc4c6b7ca3e15.html # 구글 애널리틱스 소유권 인증용 파일
 
 jekyll-archives:
   enabled: [categories, tags]
