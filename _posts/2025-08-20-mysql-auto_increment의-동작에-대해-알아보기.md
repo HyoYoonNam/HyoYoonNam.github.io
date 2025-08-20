@@ -1,4 +1,5 @@
 ---
+
 title: MySQL AUTO_INCREMENT의 동작에 대해 알아보기
 date: 2025-08-20 14:50:07 +09:00
 categories:
@@ -6,7 +7,9 @@ categories:
 tags:
 toc: true
 comments: true
+
 ---
+
 `MySQL Server와 Workbench 8.0.43`을 사용합니다.
 
 코드와 사진이 같이 존재하는 경우 코드(위)와 사진(아래)이 한 쌍을 이룹니다.

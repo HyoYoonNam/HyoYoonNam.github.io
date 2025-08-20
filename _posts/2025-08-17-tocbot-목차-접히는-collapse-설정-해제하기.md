@@ -1,4 +1,5 @@
 ---
+
 title: tocbot 목차 접히는 collapse 설정 해제하기
 date: 2025-08-17 22:14:40 +09:00
 categories:
@@ -7,7 +8,9 @@ tags:
   - tocbot
 toc: true
 comments: true
+
 ---
+
 
 > **요약:** 깃허브 블로그에서 자주 사용하는 jekyll 테마에서는 대부분 tocbot을 통해 목차를 제공합니다. 이때 기본적으로 최상위 제목 외에는 접히도록(collapse) 설정된 경우가 많은데 이를 펼치는 방법에 대해서 다룹니다.
 
