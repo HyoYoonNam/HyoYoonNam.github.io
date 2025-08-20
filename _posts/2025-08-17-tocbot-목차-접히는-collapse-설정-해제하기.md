@@ -2,7 +2,7 @@
 title: tocbot 목차 접히는 collapse 설정 해제하기
 date: 2025-08-17 22:14:40 +09:00
 categories:
-  - 깃허브 블로그 운영하기
+  - "깃허브 블로그 운영하기"
 tags:
   - tocbot
 toc: true
