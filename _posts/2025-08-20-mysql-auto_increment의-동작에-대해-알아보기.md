@@ -1,13 +1,12 @@
 ---
-
 title: MySQL AUTO_INCREMENT의 동작에 대해 알아보기
 date: 2025-08-20 14:50:07 +09:00
 categories:
   - Database
 tags:
+  - MySQL
 toc: true
 comments: true
-
 ---
 
 `MySQL Server와 Workbench 8.0.43`을 사용합니다.
