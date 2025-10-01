@@ -30,8 +30,8 @@ url: "https://hyoyoonnam.github.io"
 github:
   username: "HyoYoonNam" # change to your GitHub username
 
-twitter:
-  username: twitter_username # change to your Twitter username
+# twitter:
+#   username: twitter_username # change to your Twitter username
 
 social:
   # Change to your full name.
@@ -50,11 +50,11 @@ social:
 webmaster_verifications:
   # 구글 서치 콘솔 -> 설정 -> 추가 확인 방법: HTML 태그 -> content="이 부분 복사"
   google: MpUXs1cY0YU852yOOrtuI5ol_-eWWklSZtPgX1ttkIs # fill in your Google verification code
-  bing: # fill in your Bing verification code
-  alexa: # fill in your Alexa verification code
-  yandex: # fill in your Yandex verification code
-  baidu: # fill in your Baidu verification code
-  facebook: # fill in your Facebook verification code
+  # bing: # fill in your Bing verification code
+  # alexa: # fill in your Alexa verification code
+  # yandex: # fill in your Yandex verification code
+  # baidu: # fill in your Baidu verification code
+  # facebook: # fill in your Facebook verification code
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
@@ -66,16 +66,16 @@ analytics:
   goatcounter:
     # Settings -> Domain settings -> Code 부분에 있는 값을 복사
     id: hyoyoon # fill in your GoatCounter ID
-  umami:
-    id: # fill in your Umami ID
-    domain: # fill in your Umami domain
-  matomo:
-    id: # fill in your Matomo ID
-    domain: # fill in your Matomo domain
-  cloudflare:
-    id: # fill in your Cloudflare Web Analytics token
-  fathom:
-    id: # fill in your Fathom Site ID
+  # umami:
+  #   id: # fill in your Umami ID
+  #   domain: # fill in your Umami domain
+  # matomo:
+  #   id: # fill in your Matomo ID
+  #   domain: # fill in your Matomo domain
+  # cloudflare:
+  #   id: # fill in your Cloudflare Web Analytics token
+  # fathom:
+  #   id: # fill in your Fathom Site ID
 
 # Page views settings
 pageviews:
@@ -115,12 +115,12 @@ comments:
   # Global switch for the post-comment system. Keeping it empty means disabled.
   provider: giscus # [disqus | utterances | giscus]
   # The provider options are as follows:
-  disqus:
-    shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-  # utterances settings › https://utteranc.es/
-  utterances:
-    repo: # <gh-username>/<repo>
-    issue_term: # < url | pathname | title | ...>
+  # disqus:
+  #   shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+  # # utterances settings › https://utteranc.es/
+  # utterances:
+  #   repo: # <gh-username>/<repo>
+  #   issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
     repo: HyoYoonNam/HyoYoonNam.github.io # <gh-username>/<repo>
