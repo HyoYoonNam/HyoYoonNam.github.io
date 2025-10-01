@@ -1,5 +1,6 @@
 ---
 title: "@ModelAttribute에 대한 생성자, setter 바인딩"
+slug: spring-modelattribute-binding
 date: 2025-10-01 11:59:58 +09:00
 categories:
   - Spring
