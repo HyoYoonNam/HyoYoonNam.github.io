@@ -1,10 +1,11 @@
 ---
-title: MySQL, HAVING 절에서 SELECT 절의 Alias(별칭)를 사용해도 에러가 발생하지 않는 이유
+title: "MySQL, HAVING 절에서 SELECT 절의 Alias(별칭)를 사용해도 에러가 발생하지 않는 이유"
+slug: why-can-use-alias-of-select-list-in-having-clause
 date: 2025-08-22 14:45:28 +09:00
 categories:
   - Database
 tags:
-  - MySQL
+  - mysql
 toc: true
 comments: true
 ---
