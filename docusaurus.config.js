@@ -41,6 +41,15 @@ const config = {
     locales: ['ko'],
   },
 
+  // goat counter page view
+  scripts: [
+    {
+      src: '//gc.zgo.at/count.js',
+      async: true,
+      'data-goatcounter': 'https://hyoyoon.goatcounter.com/count',
+    },
+  ],
+
   presets: [
     [
       'classic',
