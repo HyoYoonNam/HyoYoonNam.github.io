@@ -104,10 +104,16 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
-      metadata: [{
+      metadata: [
+        {
         name:"google-site-verification",
         content: "MpUXs1cY0YU852yOOrtuI5ol_-eWWklSZtPgX1ttkIs"
-      }],
+        },
+        {
+        name:"naver-site-verification",
+        content: "60feb4831bad4f2310f1a92cb2318582d96a0efc"
+        },
+      ],
       colorMode: {
         respectPrefersColorScheme: true,
       },
