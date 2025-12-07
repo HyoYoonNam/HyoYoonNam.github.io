@@ -1,0 +1,26 @@
+hyoyoonnam:
+  name: HyoYoonNam
+  title: Software Engineer
+  url: https://linkedin.com/in/hyoyoonnam
+  image_url: https://github.com/hyoyoonnam.png
+  page: false
+  # 만약 소개 글을 더 많이 쓰고 싶다면, 따로 blog/authors/hyoyoonnam.md 파일을 만들어서 작성하면 된다.
+  description: "Java, Spring을 메인으로 하는 개발자입니다."
+  socials:
+    linkedin: hyoyoonnam
+    github: hyoyoonnam
+    email: dev.rudevico@gmail.com
+
+# slorber:
+#   name: Sébastien Lorber
+#   title: Docusaurus maintainer
+#   url: https://sebastienlorber.com
+#   image_url: https://github.com/slorber.png
+#   page:
+#     # customize the url of the author page at /blog/authors/<permalink>
+#     permalink: '/all-sebastien-lorber-articles'
+#   socials:
+#     x: sebastienlorber
+#     linkedin: sebastienlorber
+#     github: slorber
+#     newsletter: https://thisweekinreact.com
