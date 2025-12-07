@@ -50,6 +50,22 @@ const config = {
     },
   ],
 
+  // docu plugin
+  plugins: [
+    // 인덱싱을 통한 글 검색 지원
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ["en", "ko"], // 한국어 지원
+        indexBlog: true,        // 블로그 검색 켜기
+        indexDocs: false,       // 문서(Docs)는 안 쓰니까 끄기
+        // 도큐사우르스 기본에서는 블로그 경로가 /blog이라 이 경로를 default로 써서, 바꿔줘야 됨.
+        blogRouteBasePath: "/",
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
