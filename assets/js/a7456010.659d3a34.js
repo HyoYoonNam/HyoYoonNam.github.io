@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkdocusaurus_blog_rudevico=globalThis.webpackChunkdocusaurus_blog_rudevico||[]).push([[235],{8552:u=>{u.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);
