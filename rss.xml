@@ -4,84 +4,58 @@
         <title>HyoYoonNam Blog Blog</title>
         <link>https://hyoyoonnam.github.io</link>
         <description>HyoYoonNam Blog Blog</description>
-        <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 24 Dec 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>ko</language>
         <item>
-            <title><![CDATA[Welcome]]></title>
-            <link>https://hyoyoonnam.github.io/welcome</link>
-            <guid>https://hyoyoonnam.github.io/welcome</guid>
-            <pubDate>Thu, 26 Aug 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></description>
-            <content:encoded><![CDATA[<p><a href="https://docusaurus.io/docs/blog" target="_blank" rel="noopener noreferrer" class="">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog" target="_blank" rel="noopener noreferrer" class="">blog plugin</a>.</p>
-<p>Here are a few tips you might find useful.</p>
-<p>Simply add Markdown files (or folders) to the <code>blog</code> directory.</p>
-<p>Regular blog authors can be added to <code>authors.yml</code>.</p>
-<p>The blog post date can be extracted from filenames, such as:</p>
-<ul>
-<li class=""><code>2019-05-30-welcome.md</code></li>
-<li class=""><code>2019-05-30-welcome/index.md</code></li>
-</ul>
-<p>A blog post folder can be convenient to co-locate blog post images:</p>
-<p><img decoding="async" loading="lazy" alt="Docusaurus Plushie" src="https://hyoyoonnam.github.io/assets/images/docusaurus-plushie-banner-a60f7593abca1e3eef26a9afa244e4fb.jpeg" width="1500" height="500" class="img_ev3q"></p>
-<p>The blog supports tags as well!</p>
-<p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content:encoded>
-            <category>Facebook</category>
-            <category>Hello</category>
-            <category>Docusaurus</category>
-        </item>
-        <item>
-            <title><![CDATA[MDX Blog Post]]></title>
-            <link>https://hyoyoonnam.github.io/mdx-blog-post</link>
-            <guid>https://hyoyoonnam.github.io/mdx-blog-post</guid>
-            <pubDate>Sun, 01 Aug 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></description>
-            <content:encoded><![CDATA[<p>Blog posts support <a href="https://docusaurus.io/docs/markdown-features" target="_blank" rel="noopener noreferrer" class="">Docusaurus Markdown features</a>, such as <a href="https://mdxjs.com/" target="_blank" rel="noopener noreferrer" class="">MDX</a>.</p>
-<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>팁</div><div class="admonitionContent_BuS1"><p>Use the power of React to create interactive blog posts.</p></div></div>
-<!-- -->
-<p>For example, use JSX to create an interactive button:</p>
-<div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#393A34">&lt;</span><span class="token plain">button onClick</span><span class="token operator" style="color:#393A34">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token arrow operator" style="color:#393A34">=&gt;</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">alert</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">'button clicked!'</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">}</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token maybe-class-name">Click</span><span class="token plain"> me</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">&lt;</span><span class="token operator" style="color:#393A34">/</span><span class="token plain">button</span><span class="token operator" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
-<button>Click me!</button>]]></content:encoded>
-            <category>Docusaurus</category>
-        </item>
-        <item>
-            <title><![CDATA[Long Blog Post]]></title>
-            <link>https://hyoyoonnam.github.io/long-blog-post</link>
-            <guid>https://hyoyoonnam.github.io/long-blog-post</guid>
-            <pubDate>Wed, 29 May 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[This is the summary of a very long blog post,]]></description>
-            <content:encoded><![CDATA[<p>This is the summary of a very long blog post,</p>
-<p>Use a <code>&lt;!--</code> <code>truncate</code> <code>--&gt;</code> comment to limit blog post size in the list view.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content:encoded>
-            <category>Hello</category>
-            <category>Docusaurus</category>
-        </item>
-        <item>
-            <title><![CDATA[First Blog Post]]></title>
-            <link>https://hyoyoonnam.github.io/first-blog-post</link>
-            <guid>https://hyoyoonnam.github.io/first-blog-post</guid>
-            <pubDate>Tue, 28 May 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[Lorem ipsum dolor sit amet...]]></description>
-            <content:encoded><![CDATA[<p>Lorem ipsum dolor sit amet...</p>
-<p>...consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content:encoded>
-            <category>Hola</category>
-            <category>Docusaurus</category>
+            <title><![CDATA[2025 인프런 연말 어워드 '답변왕' 수상!]]></title>
+            <link>https://hyoyoonnam.github.io/inflearn-2025-end-of-year-award</link>
+            <guid>https://hyoyoonnam.github.io/inflearn-2025-end-of-year-award</guid>
+            <pubDate>Wed, 24 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[my-award]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="my-award" src="https://hyoyoonnam.github.io/assets/images/my-award-390a557acebb8ce71a87d27fe37d64fb.png" width="460" height="334" class="img_ev3q"></p>
+<p>인프런 2025 연말 어워드에서 '답변왕'에 선정되었다!</p>
+<p><img decoding="async" loading="lazy" src="https://media1.tenor.com/m/wOlC5m7NikkAAAAd/%EC%A0%9C%EB%A6%AC%EC%9D%B8%EC%82%AC-%EC%A1%B4%EC%A4%91.gif" alt="jerry" class="img_ev3q"></p>
+<p>네, 제가 수상자 맞습니다. 이 상은 저만 받는 것이 아니라, 노력해 준 제작진과 (... 중략)</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="선물을-받기까지">선물을 받기까지<a href="https://hyoyoonnam.github.io/inflearn-2025-end-of-year-award#%EC%84%A0%EB%AC%BC%EC%9D%84-%EB%B0%9B%EA%B8%B0%EA%B9%8C%EC%A7%80" class="hash-link" aria-label="선물을 받기까지에 대한 직접 링크" title="선물을 받기까지에 대한 직접 링크" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="inflearn-awards-2025" src="https://hyoyoonnam.github.io/assets/images/inflearn-awards-2025-8d9a16a58e7c1d1778be170351b4f5a0.png" width="1200" height="926" class="img_ev3q">
+사실 연말 어워드가 존재한다는 것도 몰랐고, 선물 배송을 위한 주소를 입력해달라는 메일조차도 늘 오는 인프런 광고 메일인 줄 알고 지나쳤다.</p>
+<p>하지만 꼼꼼한 인프런 측에서는 문자로 한번 더 안내해줬고, 덕분에 배송지를 무사히 입력할 수 있었다.</p>
+<p><img decoding="async" loading="lazy" alt="present-1" src="https://hyoyoonnam.github.io/assets/images/present-1-e281f409589382bab53d4cbae0589ffa.jpg" width="3024" height="4032" class="img_ev3q">
+<img decoding="async" loading="lazy" alt="present-2" src="https://hyoyoonnam.github.io/assets/images/present-2-0453a4415c9b385d2196a05d8880ff75.jpg" width="3024" height="4032" class="img_ev3q">
+그렇게 도착한 선물은 와인과 치즈! 인프런을 통해 열심히 공부하는 어른이들을 위한 맞춤 선물이다.</p>
+<p><img decoding="async" loading="lazy" alt="present-3" src="https://hyoyoonnam.github.io/assets/images/present-3-a996ade374eb96d3c15b27b4136cb5b9.jpg" width="1170" height="579" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="나는-왜-답변을-달기-시작했을까">나는 왜 답변을 달기 시작했을까?<a href="https://hyoyoonnam.github.io/inflearn-2025-end-of-year-award#%EB%82%98%EB%8A%94-%EC%99%9C-%EB%8B%B5%EB%B3%80%EC%9D%84-%EB%8B%AC%EA%B8%B0-%EC%8B%9C%EC%9E%91%ED%96%88%EC%9D%84%EA%B9%8C" class="hash-link" aria-label="나는 왜 답변을 달기 시작했을까?에 대한 직접 링크" title="나는 왜 답변을 달기 시작했을까?에 대한 직접 링크" translate="no">​</a></h2>
+<p>결론부터 말하자면 남들의 질문에 답변하는 과정에서 내 스스로 얻는 배움이 많았기 때문이다. 그리고 답변을 다는 것 자체가 재밌다.</p>
+<p>단순히 내가 아는 것과 남이 알도록 돕는 것 간에는 꽤나 큰 간극이 존재한다고 생각한다. 아니, 심지어는 '나 혼자 아는 것'은 진정한 앎이 아닐 수도 있겠다.</p>
+<p>그도 그럴 것이 나 또한 답변을 다는 과정에서 "아, 이 질문에 대한 답이 뭔지 내가 잘 알지! 알려줘야겠다!"라는 생각에 글을 작성하다가도,
+"어, 나는 이 부분을 당연하게 생각하긴 했는데, 이 사람한테는 뭐라고 설명해야 되나?"라거나, "내가 아는 지식이 진짜 fact가 맞나? 공식 레퍼런스가 있나?"라는 생각이 들어 멈칫한 적이 많다.</p>
+<p>남에게 알려준다는 것의 무게감은 그렇다.</p>
+<p>그리고 글을 이어가기 위해 내가 아는 지식을 남에게 설명할 수 있도록 정제하고, 근거를 찾는 과정에서 내가 가진 지식에 뚫려 있던 빈 구멍들을 채우게 된다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="인프런을-향한-애정">인프런을 향한 애정<a href="https://hyoyoonnam.github.io/inflearn-2025-end-of-year-award#%EC%9D%B8%ED%94%84%EB%9F%B0%EC%9D%84-%ED%96%A5%ED%95%9C-%EC%95%A0%EC%A0%95" class="hash-link" aria-label="인프런을 향한 애정에 대한 직접 링크" title="인프런을 향한 애정에 대한 직접 링크" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="smile" src="https://hyoyoonnam.github.io/assets/images/smile-36f6b74e1332427112be75d66745ea9a.gif" width="456" height="406" class="img_ev3q"></p>
+<p>그 전부터 인프런을 좋아하고, 만족하며 사용했지만 이렇게 연말 선물을 받으니 그 애정이 더 커짐을 숨길 수가 없다.</p>
+<p>마침 인프런 측에서 남기고 싶은 말을 작성할 기회를 주길래 애정을 꾹꾹 담아봤다. 아래로 그 글을 남기며, 이번 포스팅은 끝!</p>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="인프런에게-한마디">인프런에게 한마디<a href="https://hyoyoonnam.github.io/inflearn-2025-end-of-year-award#%EC%9D%B8%ED%94%84%EB%9F%B0%EC%97%90%EA%B2%8C-%ED%95%9C%EB%A7%88%EB%94%94" class="hash-link" aria-label="인프런에게 한마디에 대한 직접 링크" title="인프런에게 한마디에 대한 직접 링크" translate="no">​</a></h4>
+<blockquote>
+<p>이런 이벤트가 있으리라고는 상상도 못했는데 연말에 기분 좋은 일이 생겼네요!</p>
+<p>최근 2달 정도는 취업을 위해 배달의 민족 부트캠프에 참여하며 기본기만 다지느라 인프런을 덜 찾게 되었는데, 그 전부터 꾸준히 해오던 답변 활동 덕에 좋은 자리에 함께하게 되었네요.</p>
+<p>제가 자발적으로 답변을 활발하게 작성한 ‘나에게 도움이 된다‘ 그리고 ‘누군가 내 답변으로 나처럼 도움을 받겠구나‘ 생각했기 때문입니다.</p>
+<p>저 역시도 다른 수강생들이 남겨 준 답변으로부터 새로운 의문을 가지고 해결해가는 과정에서 성장할 수 있었어요. 누군가 남겨 둔 답변을 통해 얻게 된 인사이트도 많았고요.</p>
+<p>이렇게 경험한 감사함에 보답하고자 답변을 시작하게 되었네요. 물론 남에게 설명하기 위한 답변을 작성하는 과정에서 제 스스로 부족한 부분을 채우며 성장하기도 했고요.</p>
+<p>처음 프로그래밍 공부를 시작할 때 접했던 플랫폼이 인프런인 만큼 많은 애정이 가는 서비스입니다.</p>
+<p>최근 몇 년새 모바일 앱 업데이트나 신기능 출시, 이벤트 진행 등을 하는 모습을 보면 ‘정말 노력하고 있구나. 앞으로 더 성장하는 서비스가 되겠구나‘ 생각하며 괜시리 제가 뿌듯함을 느끼곤 했어요.</p>
+<p>제 경우에는 인프런 내에서 필요한 강의를 모두 찾을 수 있었기에 타 서비스(잘 모르지만 아마 국내에 2, 3개 정도의 경쟁자가 있는 걸로 기억합니다)는 가입조차 한 적이 없네요.</p>
+<p>인프런 측에서 현재 신규 가입자에 대한 어떤 이점을 주는지는 모르지만, 적극적인 혜택을 준다면 한번 강의를 듣기 시작하면 락인되지 않을까 하는 생각이 들어 의견 남겨요.</p>
+<p>그리고 대학 본부나 학생회 측과 연락해서 캠퍼스 내에서 자그마한 이벤트 부스를 열어 강의나 쿠폰 증정을 해도 신규 유입자 모집에 도움이 될 것 같아요.</p>
+<p>업종이 다르긴 하지만, 노션의 경우 대학생 엠버서더를 모집해서 노션을 홍보하기도 하고, 몬스터 에너지드링크의 경우 음료 무료 나눔 행사를 자주 진행하더라고요.</p>
+<p>글을 작성하면서 드는 생각인데 (참여할 강사님이 계실진 모르지만) 인프런 주최로 해서 대학 측에 초청 강연을 요구하면 비교적 잘 성사되지 않을까 싶기도 하네요.</p>
+<p>글이 길었는데, 연말 잘 마무리하시고 인프런과 저 모두 목표한 바를 조금씩 이루는 2026년이 되기를 응원합니다!</p>
+</blockquote>]]></content:encoded>
+            <category>Life</category>
         </item>
     </channel>
 </rss>
