@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkdocusaurus_blog_rudevico=globalThis.webpackChunkdocusaurus_blog_rudevico||[]).push([[885],{2937:s=>{s.exports=JSON.parse('{"tags":[{"label":"Life","permalink":"/tags/life","description":"rudevico\uc758 \uc804\ubc18\uc801\uc778 \uc77c\uc0c1 \uc774\uc57c\uae30","count":1}]}')}}]);
