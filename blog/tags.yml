@@ -1,19 +1,9 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+life:
+  label: Life
+  permalink: /life
+  description: rudevico의 전반적인 일상 이야기
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
-
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
-
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+객체지향:
+  label: 객체지향
+  permalink: /object-oriented
+  description: 객체지향 프로그래밍에 대한 이야기

@@ -21,3 +21,6 @@ yarn-error.log*
 
 # added
 docs/
+.backup/
+blog/.obsidian/
+blog/.drafts/

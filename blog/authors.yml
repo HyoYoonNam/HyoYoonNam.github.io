@@ -5,7 +5,7 @@ hyoyoonnam:
   image_url: https://github.com/hyoyoonnam.png
   page: false
   # 만약 소개 글을 더 많이 쓰고 싶다면, 따로 blog/authors/hyoyoonnam.md 파일을 만들어서 작성하면 된다.
-  description: "Java, Spring을 메인으로 하는 개발자입니다."
+  description: "Java, Spring을 메인으로 하는 취준생입니다."
   socials:
     linkedin: hyoyoonnam
     github: hyoyoonnam
