@@ -1,6 +1,6 @@
 ---
-slug: sample1
-title: message와 operation은 다르다.
+slug: difference-between-message-sending-and-method-calling
+title: message 전송과 메서드 호출은 다르다.
 authors: hyoyoonnam
 tags: [객체지향]
 # image: ./my-award.png
