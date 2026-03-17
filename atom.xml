@@ -2,11 +2,49 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hyoyoonnam.github.io</id>
     <title>HyoYoonNam Blog Blog</title>
-    <updated>2026-03-13T00:00:00.000Z</updated>
+    <updated>2026-03-17T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hyoyoonnam.github.io"/>
     <subtitle>HyoYoonNam Blog Blog</subtitle>
     <icon>https://hyoyoonnam.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[SQ3R이란]]></title>
+        <id>https://hyoyoonnam.github.io/explanation-about-SQ3R</id>
+        <link href="https://hyoyoonnam.github.io/explanation-about-SQ3R"/>
+        <updated>2026-03-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[SQ3R은 글을 읽으면서 '잘 학습하기 위한' 방법론이다.]]></summary>
+        <content type="html"><![CDATA[<p><strong>SQ3R</strong>은 글을 읽으면서 '잘 학습하기 위한' 방법론이다.</p>
+<p>글을 단순히 읽는 것이 아니라, 의식적으로 읽음으로써 스스로 질문을 생각하고 그에 대한 답을 얻으려는 자세로 임한다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="들어가며">들어가며<a href="https://hyoyoonnam.github.io/explanation-about-SQ3R#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0" class="hash-link" aria-label="들어가며에 대한 직접 링크" title="들어가며에 대한 직접 링크" translate="no">​</a></h2>
+<p>다음은 참고 자료들을 통해 SQ3R이 무엇이고, 어떻게 실행할 수 있는지 정리한 것이다.</p>
+<p><a href="https://product.kyobobook.co.kr/detail/S000001033071" target="_blank" rel="noopener noreferrer" class="">함께 자라기(김창준)</a>라는 책을 읽으며 접한 방법론이고, 최근 들어 새로운 지식을 '빠르면서도 효과적으로' 습득하는 기술을 배울 필요가 느껴져 자세히 알아보고 적용해보기로 했다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="survey">Survey<a href="https://hyoyoonnam.github.io/explanation-about-SQ3R#survey" class="hash-link" aria-label="Survey에 대한 직접 링크" title="Survey에 대한 직접 링크" translate="no">​</a></h2>
+<p>아직 글을 읽지 마라. 글의 구성(목차, 제목, 부제목, ...)을 보며 전체를 파악하라.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="question">Question<a href="https://hyoyoonnam.github.io/explanation-about-SQ3R#question" class="hash-link" aria-label="Question에 대한 직접 링크" title="Question에 대한 직접 링크" translate="no">​</a></h2>
+<p>'S' 단계에서 이해/예측/파악되지 않은 글 요소에 대한 질문을 작성하라.</p>
+<p>ex. '프로그래밍 언어의 달인' 챕터에서는 무슨 이야기를 다룰까? 단순히 달인 자랑만 할까? 아니면 달인의 노하우를 공개할까? 내가 달인처럼 되려면 어떻게 해야 할까? ...</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>노트</div><div class="admonitionContent_BuS1"><p>만든 질문들을 해결할 목적으로 글을 읽는다면, 어느 부분에 집중해서 읽어야 할 지가 보인다.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="read">Read<a href="https://hyoyoonnam.github.io/explanation-about-SQ3R#read" class="hash-link" aria-label="Read에 대한 직접 링크" title="Read에 대한 직접 링크" translate="no">​</a></h2>
+<p>'Q'를 통해 발견한 '내가 집중할 부분'에 형광펜을 치거나 메모를 남기며 읽어라. 내 시각이 물리적으로도 그 곳에 집중되게끔 하라.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="recite">Recite<a href="https://hyoyoonnam.github.io/explanation-about-SQ3R#recite" class="hash-link" aria-label="Recite에 대한 직접 링크" title="Recite에 대한 직접 링크" translate="no">​</a></h2>
+<p>'Q'를 해소할 수 있는 부분에 집중하여 글을 읽었다면, (잘 읽었다면 해소되었을테니) 스스로 질문에 대해 소리내어 답변하라.</p>
+<p>이때 답변하기 어려웠던 질문을 기록하고, 다음 'R'에서 활용하라.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="review">Review<a href="https://hyoyoonnam.github.io/explanation-about-SQ3R#review" class="hash-link" aria-label="Review에 대한 직접 링크" title="Review에 대한 직접 링크" translate="no">​</a></h2>
+<p>'Q'에서 작성했던 질문들을 통해 복습하라.</p>
+<p>이때 질문 리스트는 내가 읽은 글로부터 물리적으로 분리하라(퀴즈용 카드를 작성한다거나).</p>
+<p>질문과 글이 함께 있으면, 자연스럽게 글로부터 clue를 얻게 되는데 '자신이 이해했다는 착각'을 하기 쉽상이다.</p>
+<p>온전히 본인의 기억 속에서 끄집어내는, 그 힘든 과정을 겪어야 된다. 실제 시험을 볼 때도 책을 참고할 수는 없지 않은가!!(오픈북 시험도 있지만...)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="references">References<a href="https://hyoyoonnam.github.io/explanation-about-SQ3R#references" class="hash-link" aria-label="References에 대한 직접 링크" title="References에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://product.kyobobook.co.kr/detail/S000001033071" target="_blank" rel="noopener noreferrer" class="">함께 자라기(김창준)</a> - 프로그래밍 언어 배우기의 달인</li>
+<li class=""><a href="https://academicresourcecenter.harvard.edu/2024/03/27/sq3r/" target="_blank" rel="noopener noreferrer" class="">SQ3R - Harvard Univ.</a></li>
+</ul>]]></content>
+        <author>
+            <name>HyoYoonNam</name>
+            <uri>https://linkedin.com/in/hyoyoonnam</uri>
+        </author>
+        <category label="SQ3R_의식적으로_연습하기" term="SQ3R_의식적으로_연습하기"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[unmodifiableList와 ImmutableList]]></title>
         <id>https://hyoyoonnam.github.io/difference-between-collections-unmodifiablelist-and-List-of-immutablelist</id>
@@ -147,6 +185,5 @@
             <uri>https://linkedin.com/in/hyoyoonnam</uri>
         </author>
         <category label="Life" term="Life"/>
-        <category label="🟩_done" term="🟩_done"/>
     </entry>
 </feed>
