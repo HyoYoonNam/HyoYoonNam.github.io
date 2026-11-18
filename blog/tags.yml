@@ -7,3 +7,19 @@ life:
   label: 객체지향
   permalink: /object-oriented
   description: 객체지향 프로그래밍에 대한 이야기
+
+기술:
+  label: 기술
+  permalink: /tech
+
+회고:
+  label: 회고
+  permalink: /retrospective
+
+Java:
+  label: Java
+  permalink: /java
+
+SQ3R_의식적으로_연습하기:
+  label: SQ3R_의식적으로_연습하기
+  permalink: /sq-3-r-의식적으로-연습하기
