@@ -15,3 +15,11 @@ life:
 회고:
   label: 회고
   permalink: /retrospective
+
+Java:
+  label: Java
+  permalink: /java
+
+SQ3R_의식적으로_연습하기:
+  label: SQ3R_의식적으로_연습하기
+  permalink: /sq-3-r-의식적으로-연습하기
