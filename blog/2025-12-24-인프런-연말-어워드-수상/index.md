@@ -4,6 +4,9 @@ title: 2025 인프런 연말 어워드 '답변왕' 수상!
 authors: hyoyoonnam
 tags: [life]
 image: ./my-award.png
+started: '2025-12-24T00:00:00.000Z'
+deadline(or finished): '2025-12-24T15:00:00.000Z'
+status: 🟩_done
 ---
 ![my-award](./my-award.png)
 

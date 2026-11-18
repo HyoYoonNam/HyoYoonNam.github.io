@@ -1,9 +1,12 @@
 ---
 slug: explanation-about-SQ3R
-title: "SQ3R이란"
+title: SQ3R이란
 authors: hyoyoonnam
 tags: [SQ3R_의식적으로_연습하기]
-description: "SQ3R은 글을 읽으면서 '잘 학습하기 위한' 방법론이다."
+status: 🟩_done
+topics: ['[[woowa]]', '[[Lv 1]]']
+started: '2026-03-17T00:00:00.000Z'
+deadline(or finished): '2026-03-17T15:37:00.000Z'
 ---
 
 **SQ3R**은 글을 읽으면서 '잘 학습하기 위한' 방법론이다.
@@ -29,9 +32,7 @@ description: "SQ3R은 글을 읽으면서 '잘 학습하기 위한' 방법론이
 ex. '프로그래밍 언어의 달인' 챕터에서는 무슨 이야기를 다룰까? 단순히 달인 자랑만 할까? 아니면 달인의 노하우를 공개할까? 내가 달인처럼 되려면 어떻게 해야 할까? ...
 
 :::note
-
 만든 질문들을 해결할 목적으로 글을 읽는다면, 어느 부분에 집중해서 읽어야 할 지가 보인다.
-
 :::
 
 ## Read
@@ -55,6 +56,5 @@ ex. '프로그래밍 언어의 달인' 챕터에서는 무슨 이야기를 다�
 온전히 본인의 기억 속에서 끄집어내는, 그 힘든 과정을 겪어야 된다. 실제 시험을 볼 때도 책을 참고할 수는 없지 않은가!!(오픈북 시험도 있지만...)
 
 ## References
-
-* [함께 자라기(김창준)](https://product.kyobobook.co.kr/detail/S000001033071) - 프로그래밍 언어 배우기의 달인
-* [SQ3R - Harvard Univ.](https://academicresourcecenter.harvard.edu/2024/03/27/sq3r/)
+- [함께 자라기(김창준)](https://product.kyobobook.co.kr/detail/S000001033071) - 프로그래밍 언어 배우기의 달인
+- [SQ3R - Harvard Univ.](https://academicresourcecenter.harvard.edu/2024/03/27/sq3r/)

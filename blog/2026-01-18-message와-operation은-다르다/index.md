@@ -4,6 +4,8 @@ title: message 전송과 메서드 호출은 다르다.
 authors: hyoyoonnam
 tags: [객체지향]
 # image: ./my-award.png
+started: '2026-01-18T00:00:00.000Z'
+deadline(or finished): null
 ---
 
 우리는 흔히 '*메서드를 호출한다*'는 표현을 쓴다. 하지만 객체지향적인 관점에서 엄밀히 하자면 '*메시지를 전송한다*'는 표현이 더 적절하다.
