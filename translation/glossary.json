@@ -1,0 +1,28 @@
+{
+  "terms": [
+    {"korean": "객체지향", "english": "object-oriented", "note": "프로그래밍 패러다임을 뜻하면 object-oriented programming으로 쓴다."},
+    {"korean": "메시지", "english": "message", "note": "객체 사이의 메시지 전송 문맥에 사용한다."},
+    {"korean": "오퍼레이션", "english": "operation", "note": "객체가 제공하는 행위를 뜻한다. method와 구분한다."},
+    {"korean": "메서드", "english": "method", "note": "operation을 구현하는 코드를 뜻한다."},
+    {"korean": "수정 불가능한 리스트", "english": "unmodifiable list", "note": "읽기 전용 뷰도 포함하는 표현이다. immutable list와 구분한다."},
+    {"korean": "불변 리스트", "english": "immutable list", "note": "원문이 말하는 불변성의 범위를 유지한다. 요소 객체까지 불변이라고 확대하지 않는다."},
+    {"korean": "뷰", "english": "view", "note": "컬렉션이 원본을 참조하는 문맥에 사용한다."},
+    {"korean": "스냅샷", "english": "snapshot", "note": "특정 시점의 내용을 복사한 컬렉션 문맥에 사용한다."},
+    {"korean": "외부 API", "english": "external API", "note": "외부 서비스 연동을 설명할 때 사용한다."},
+    {"korean": "계약", "english": "contract", "note": "API의 입력, 출력과 의미에 관한 약속을 뜻하는 문맥에 사용한다."},
+    {"korean": "역직렬화", "english": "deserialization", "note": "직렬화된 데이터를 객체로 읽는 과정이다."},
+    {"korean": "회고", "english": "reflection", "note": "일반적인 회고 글의 표현이다. 팀의 정기 회고 행사라면 retrospective를 사용한다."},
+    {"korean": "우아한테크코스", "english": "Woowacourse", "note": "교육 과정의 이름이다."},
+    {"korean": "우테코", "english": "Woowacourse", "note": "우아한테크코스의 줄임말이다."},
+    {"korean": "코끼리", "english": "Elephant", "note": "저자의 별명을 가리킬 때 사용한다. 동물은 elephant로 쓴다."},
+    {"korean": "책책", "english": "Chaekchaek", "note": "저자가 개발한 서비스의 이름이다."},
+    {"korean": "알라딘", "english": "Aladin", "note": "서점과 해당 도서 API 서비스의 이름이다."},
+    {"korean": "인프런", "english": "Inflearn", "note": "온라인 교육 서비스의 이름이다."},
+    {"korean": "프로그래머스", "english": "Programmers", "note": "코딩 문제 풀이 플랫폼의 이름이다."},
+    {"korean": "리로그", "english": "Rilog", "note": "이전 블로그 플랫폼의 이름이다."},
+    {"korean": "탄천", "english": "the Tancheon", "note": "하천 이름이다. 문장 안 관사와 소유격은 자연스럽게 조정한다."},
+    {"korean": "너구리", "english": "raccoon dog", "note": "탄천에서 만난 한국의 야생동물을 가리키는 문맥에 사용한다."},
+    {"korean": "이방인", "english": "The Stranger", "note": "알베르 카뮈의 소설 제목일 때 사용한다. 일반 명사인 이방인은 문맥에 맞게 번역한다."},
+    {"korean": "겨울꿈", "english": "Winter Dreams", "note": "F. 스콧 피츠제럴드의 작품 제목이다."}
+  ]
+}
