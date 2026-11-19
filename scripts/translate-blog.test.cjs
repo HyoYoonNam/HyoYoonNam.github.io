@@ -2,7 +2,7 @@ const {test} = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const matter = require('gray-matter');
-const {postInfo, render, requestTranslation} = require('./translate-blog.cjs');
+const {readGlossary, matchesTranslation, postInfo, render, requestTranslation} = require('./translate-blog.cjs');
 
 const source = `---
 slug: a-new-post
@@ -73,6 +73,9 @@ test('Responses 요청 형식, 완료 검사와 일시 오류 재시도를 확�
     assert.equal(url, 'https://api.openai.com/v1/responses');
     const request = JSON.parse(options.body);
     assert.equal(request.store, false);
+    const input = JSON.parse(request.input);
+    assert.deepEqual(input.glossary, readGlossary().glossary);
+    assert.ok(input.glossary.terms.some(term => term.korean === '우테코' && term.english === 'Woowacourse'));
     assert.equal(request.text.format.type, 'json_schema');
     assert.equal(request.text.format.strict, true);
     attempts++;
@@ -135,4 +138,14 @@ test('인용문 안 코드와 길이가 다른 fence, 인라인 코드를 보존
     const text = source + '\n' + block + '\n';
     assert.throws(() => render(text, {...translation, body: translation.body + '\n' + block.replace('x = 1', 'x = 2') + '\n'}));
   }
+});
+
+
+test('원문과 용어 사전이 모두 같은 경우에만 자동 번역을 재사용한다', () => {
+  const {fingerprint} = readGlossary();
+  const output = render(source, translation, fingerprint);
+  assert.ok(matchesTranslation(output, source, fingerprint));
+  assert.equal(matchesTranslation(output, source + '\n수정', fingerprint), false);
+  assert.equal(matchesTranslation(output, source, 'changed-glossary'), false);
+  assert.equal(matchesTranslation(output.replace(/<!-- translation-glossary-sha256:.*? -->/, ''), source, fingerprint), false);
 });
