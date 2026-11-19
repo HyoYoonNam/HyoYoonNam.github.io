@@ -1,0 +1,102 @@
+name: Translate blog to English
+
+on:
+  push:
+    branches: [main]
+    paths: ['blog/**']
+  workflow_dispatch:
+    inputs:
+      post_path:
+        description: '한국어 글 경로. 비우면 영어판이 없는 글을 찾습니다.'
+        type: string
+        default: ''
+      dry_run:
+        description: 'API 번역과 빌드만 확인합니다.'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: translate-blog
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      posts: ${{ steps.posts.outputs.posts }}
+      source_sha: ${{ steps.posts.outputs.source_sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - id: posts
+        name: 번역할 글 찾기
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+          POST_PATH: ${{ inputs.post_path }}
+        run: |
+          node scripts/translate-blog.cjs prepare
+          echo "source_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  translate:
+    needs: prepare
+    if: needs.prepare.outputs.posts != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+      pull-requests: write
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        post: ${{ fromJSON(needs.prepare.outputs.posts) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.source_sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: 영어판 생성
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-5.4-2026-03-05
+          POST_PATH: ${{ matrix.post.file }}
+        run: node scripts/translate-blog.cjs
+      - name: 두 언어 빌드와 연결 검사
+        env:
+          TZ: UTC
+          POST_PATH: ${{ matrix.post.file }}
+        run: |
+          npm run build
+          node scripts/verify-blog-translations.cjs
+      - name: 번역 PR 생성 또는 갱신
+        if: github.event_name != 'workflow_dispatch' || !inputs.dry_run
+        uses: peter-evans/create-pull-request@3ffccacd46053766916f087ce41d627c0b8cf2d1 # v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: ${{ matrix.post.branch }}
+          add-paths: i18n/en/docusaurus-plugin-content-blog/**
+          commit-message: '영어 번역 추가 또는 갱신'
+          title: '영어 번역 — ${{ matrix.post.file }}'
+          body: |
+            한국어 원문을 기준으로 영어 번역을 생성했습니다. 작성일과 slug를 보존하고, 한국어와 영어 빌드에서 같은 글의 언어 전환을 확인했습니다.
+
+            원문은 `${{ matrix.post.file }}`, 소스 커밋은 `${{ needs.prepare.outputs.source_sha }}`입니다. 모델은 `gpt-5.4-2026-03-05`를 사용했습니다.
+
+            문체와 의미를 독립 검토한 후 병합해주세요. 원문 수정 후 재실행하면 이 PR을 갱신합니다.
