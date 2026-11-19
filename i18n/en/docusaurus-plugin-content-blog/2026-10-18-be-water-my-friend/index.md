@@ -101,7 +101,7 @@ Last time I ran here I saw raccoon dogs and a bird. I wonder how they fared toda
 
 ## Reading Bacon’s “Of Adversity” in the Moonye edition
 
-This essay suggests a way to take pleasure in adversity. Several passages circle the same idea, so I’ll finish by gathering them here, in my own English from the Korean edition.
+This essay suggests a way to take pleasure in adversity. Several passages circle the same idea, so I’ll finish by gathering them here. The excerpts below are translated from the Korean edition.
 
 > The good things of prosperity are worth wishing for. The good things of adversity are worth admiring. — Seneca
 
