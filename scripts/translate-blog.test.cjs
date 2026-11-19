@@ -120,11 +120,19 @@ test('자동 실행의 추가, 수정 감지와 수동 실행의 누락 글 탐�
       return JSON.parse(fs.readFileSync(output, 'utf8').trim().slice('posts='.length)).map(post => post.file);
     };
     assert.deepEqual(run({BEFORE_SHA: before, AFTER_SHA: after}), [oldFile, newFile]);
-    assert.deepEqual(run({}), [newFile]);
+    assert.deepEqual(run({}), [oldFile, newFile]);
     assert.deepEqual(run({POST_PATH: oldFile}), [oldFile]);
     write(newFile, source.replace('authors:', 'draft: true\nauthors:'));
-    assert.deepEqual(run({}), []);
+    assert.deepEqual(run({}), [oldFile]);
   } finally {
     fs.rmSync(root, {recursive: true, force: true});
+  }
+});
+
+
+test('인용문 안 코드와 길이가 다른 fence, 인라인 코드를 보존한다', () => {
+  for (const block of ['> ```java\n> int x = 1;\n> ```', '```java\nint x = 1;\n````', '값은 `x = 1`이다.']) {
+    const text = source + '\n' + block + '\n';
+    assert.throws(() => render(text, {...translation, body: translation.body + '\n' + block.replace('x = 1', 'x = 2') + '\n'}));
   }
 });

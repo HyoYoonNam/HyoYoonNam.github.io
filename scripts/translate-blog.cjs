@@ -21,33 +21,32 @@ function postInfo(file) {
 function prepare() {
   const tracked = git('ls-files', '-z', 'blog').split('\0').filter(Boolean);
   const posts = tracked.filter(file => /^blog\/\d{4}-\d{2}-\d{2}-[^/]+\/index\.mdx?$/.test(file) && !matter(fs.readFileSync(file, 'utf8')).data.draft);
-  let changed;
+  let candidates = posts.filter(file => !translationIsCurrent(file));
   if (process.env.POST_PATH) {
     assert.ok(posts.includes(process.env.POST_PATH), '지정한 한국어 글을 찾을 수 없습니다.');
-    changed = [process.env.POST_PATH];
-  } else if (process.env.BEFORE_SHA && !/^0+$/.test(process.env.BEFORE_SHA)) {
-    changed = git('diff', '--name-only', '-z', '--diff-filter=AMR', process.env.BEFORE_SHA, process.env.AFTER_SHA, '--', 'blog').split('\0');
-  } else {
-    changed = posts.filter(file => !fs.existsSync(postInfo(file).target));
+    candidates = [process.env.POST_PATH];
   }
-  const targets = posts.filter(file => changed.includes(file)).map(postInfo);
-  // 수동 재실행에서는 아직 영어판이 없는 글을 다시 찾습니다.
-  if (!process.env.POST_PATH && !process.env.BEFORE_SHA) {
-    targets.splice(0, targets.length, ...posts.filter(file => !fs.existsSync(postInfo(file).target)).map(postInfo));
-  }
+  const targets = candidates.map(postInfo);
   assert.ok(targets.length <= 256, '한 번에 처리할 수 있는 글 수를 초과했습니다.');
   fs.appendFileSync(process.env.GITHUB_OUTPUT, `posts=${JSON.stringify(targets)}\n`);
   console.log(`번역 대상 ${targets.length}편`);
 }
 
-function codeBlocks(body) {
-  return [...body.matchAll(/^([ \t]*)(`{3,}|~{3,})[^\n]*\n[\s\S]*?^\1\2[ \t]*$/gm)].map(match => match[0]);
-}
-
-function references(body) {
-  const prose = codeBlocks(body).reduce((text, block) => text.replace(block, ''), body);
-  return [...prose.matchAll(/\]\(([^\s)]+)(?:\s+[^)]*)?\)|\b(?:src|href)=["']([^"']+)["']|^\s*\[[^\]]+\]:\s*(\S+)/gm)]
-    .map(match => match[1] || match[2] || match[3]).sort();
+function translationIsCurrent(file) {
+  const {target} = postInfo(file);
+  if (!fs.existsSync(target)) return false;
+  const source = fs.readFileSync(file, 'utf8');
+  const translated = fs.readFileSync(target, 'utf8');
+  const marker = translated.match(/<!-- translation-source-sha256: ([a-f0-9]{64}) -->/);
+  if (marker) return marker[1] === hash(source);
+  // 수동으로 번역한 기존 글은 영어판을 마지막으로 수정한 커밋의 원문과 대조합니다.
+  const commit = git('log', '-1', '--format=%H', '--', target).trim();
+  if (!commit) return false;
+  try {
+    return git('show', `${commit}:${file}`) === source;
+  } catch {
+    return false;
+  }
 }
 
 function protectedSyntax(body) {
@@ -55,6 +54,12 @@ function protectedSyntax(body) {
   const tree = createProcessor().parse(parseable);
   const protectedNodes = [];
   function visit(node) {
+    if (['code', 'inlineCode'].includes(node.type)) {
+      protectedNodes.push([node.type, node.value, node.lang, node.meta]);
+    }
+    if (['link', 'image', 'definition'].includes(node.type)) {
+      protectedNodes.push([node.type, node.url, node.title]);
+    }
     if (['mdxjsEsm', 'mdxFlowExpression', 'mdxTextExpression'].includes(node.type)) {
       protectedNodes.push([node.type, node.value]);
     }
@@ -72,8 +77,6 @@ function validateTranslation(source, translated) {
   assert.deepEqual(protectedSyntax(translated.body), protectedSyntax(source.content), 'MDX 실행 구문 또는 HTML 속성이 원문과 다릅니다.');
   assert.ok(translated.title?.trim(), '번역 제목이 비어 있습니다.');
   assert.ok(translated.body?.trim(), '번역 본문이 비어 있습니다.');
-  assert.deepEqual(codeBlocks(translated.body), codeBlocks(source.content), '코드 블록이 원문과 다릅니다.');
-  assert.deepEqual(references(translated.body), references(source.content), '링크 또는 이미지 경로가 원문과 다릅니다.');
   assert.equal((translated.body.match(/<!--\s*truncate\s*-->/g) || []).length,
     (source.content.match(/<!--\s*truncate\s*-->/g) || []).length, '미리보기 구분자가 다릅니다.');
 }
@@ -127,12 +130,12 @@ Preserve every fenced code block byte for byte, all URLs and relative paths, ref
         continue;
       }
       // 응답 본문에 원문이 포함될 수 있어 실패 상태만 기록합니다.
-      throw new Error(`OpenAI API HTTP ${response.status}。キーの権限、モデル利用可否、残高を確認してください。`);
+      throw new Error(`OpenAI API HTTP ${response.status}。키 권한, 모델 이용 가능 여부, 잔액을 확인해주세요.`);
     }
     const result = await response.json();
     assert.equal(result.status, 'completed', 'OpenAI 응답이 완료되지 않았습니다.');
     const contents = (result.output || []).flatMap(item => item.content || []);
-    assert.ok(!contents.some(item => item.type === 'refusal'), '翻訳リクエストが拒否されました。');
+    assert.ok(!contents.some(item => item.type === 'refusal'), '번역 요청이 거절됐습니다.');
     const text = contents.filter(item => item.type === 'output_text').map(item => item.text).join('');
     return JSON.parse(text);
   }
@@ -197,4 +200,4 @@ if (require.main === module) {
     process.exitCode = 1;
   });
 }
-module.exports = {postInfo, render, requestTranslation, validateTranslation};
+module.exports = {postInfo, translationIsCurrent, render, requestTranslation, validateTranslation};

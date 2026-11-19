@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       post_path:
-        description: '한국어 글 경로. 비우면 영어판이 없는 글을 찾습니다.'
+        description: '한국어 글 경로. 비우면 번역이 없거나 원문이 바뀐 글을 찾습니다.'
         type: string
         default: ''
       dry_run:
@@ -41,8 +41,6 @@ jobs:
       - id: posts
         name: 번역할 글 찾기
         env:
-          BEFORE_SHA: ${{ github.event.before }}
-          AFTER_SHA: ${{ github.sha }}
           POST_PATH: ${{ inputs.post_path }}
         run: |
           node scripts/translate-blog.cjs prepare
@@ -84,6 +82,12 @@ jobs:
         run: |
           npm run build
           node scripts/verify-blog-translations.cjs
+      - name: 최신 원문 확인
+        env:
+          POST_PATH: ${{ matrix.post.file }}
+        run: |
+          git fetch origin main
+          git diff --exit-code HEAD origin/main -- "$POST_PATH"
       - name: 번역 PR 생성 또는 갱신
         if: github.event_name != 'workflow_dispatch' || !inputs.dry_run
         uses: peter-evans/create-pull-request@3ffccacd46053766916f087ce41d627c0b8cf2d1 # v8
