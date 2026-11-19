@@ -38,7 +38,11 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'ko',
-    locales: ['ko'],
+    locales: ['ko', 'en'],
+    localeConfigs: {
+      ko: {label: '한국어'},
+      en: {label: 'English'},
+    },
   },
 
   // goat counter page view
@@ -124,6 +128,7 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
+          {type: 'localeDropdown', position: 'right'},
           {to: '/tags', label: 'Tags', position: 'left'}, // 태그 목록
           {to: '/archive', label: 'Archive', position: 'left'}, // 전체 글 목록
           {
