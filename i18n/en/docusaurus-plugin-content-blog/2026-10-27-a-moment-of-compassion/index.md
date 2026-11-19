@@ -1,37 +1,39 @@
 ---
 slug: a-moment-of-compassion
-title: "A Moment of Compassion"
+title: "The Feeling of Pitying Someone"
 date: 2026-10-27T05:57:30.920158+09:00
 authors: hyoyoonnam
 tags: [기술]
-image: ../../../../blog/2026-10-27-a-moment-of-compassion/cover.png
+image: ./cover.png
 ---
 
-![cover](../../../../blog/2026-10-27-a-moment-of-compassion/cover.png)
+<!-- translation-source-sha256: 3940960b6684f879b2322554717ea162e7784198277dc44e5a04febcd498d9a6 -->
 
-Was it two or three weeks ago? For some reason I woke early and went for a run along the Tancheon. Dawn had passed, but the sunlight still looked blue. I’d run an easy two kilometers or so and was heading back up.
+![The feeling of pitying someone](./cover.png)
+
+Maybe it was two or three weeks ago. For some reason, I woke up early and went out for a run along Tancheon. It was that time after dawn when the sunlight looks bluish. I ran lightly for about 2 km and was heading back up.
 
 <!-- truncate -->
 
-The paved ramp was broad enough for maintenance vehicles. Most of the time a metal barrier keeps them out, leaving just enough of a gap for one person to pass.
+It was a wide asphalt incline meant for work vehicles to go up and down, but usually it was blocked off with a metal fence to restrict cars, so in practice it was narrow enough for only about one person to pass through.
 
-[Photo of the ramp goes here]
+[Photo of the incline goes here]
 
-I’d just finished my run and was puffing my way uphill. Behind me came a middle-aged man who looked as though he’d been out for a leisurely walk.
+I had just finished my run, so I was huffing and puffing as I went up the slope, and behind me was a middle-aged man who looked as if he had been out on a leisurely walk.
 
-As I reached the top, another middle-aged man on a bicycle went past me in the opposite direction. He looked a little younger than the man coming up.
+And just beside me, as I reached the top, passed another middle-aged man on a bicycle. He seemed younger than the man coming up from below, though.
 
-They were both heading for the same gap. Only one could get through at a time. The man coming uphill was looking at his phone, and it seemed to fall to the cyclist to do enough dodging for the pair of them, in rather a hurry.
+They were headed for the same spot, but they couldn’t pass through at the same time. On top of that, the man walking up was looking at his phone, and it must have been quite an urgent situation for the man on the bicycle, who had to dodge on behalf of the phone-watching man too.
 
-He must have steered well, because they didn’t collide. He did mutter a startled “Ah, damn it” on his way down.
+Still, maybe he handled the bike deftly enough, because there was no accident. Instead, perhaps because he had been so startled, there was a man riding down the rest of the way muttering, “Ah, shit...”
 
-For all his attention to the phone, the other man heard that part perfectly well. “Hey! What did you just say?” Their voices rose.
+The man with the phone, still focused on his screen, must at least have heard that part clearly, because he shouted, “Sir, what did you just say!” and the two of them started raising their voices at each other.
 
 ...
 
-Watching them, I felt sorry for them both. I’m grateful whenever I get to go outside and enjoy the morning air. A surprising number of things have to come together for me to do it, from going to bed early the night before to getting past the urge to spend five more minutes under the covers. All that, spoiled for want of a moment’s patience. I wondered whether they’d spend the day complaining about each other to their families, or replaying it alone and getting upset all over again.
+What I felt watching this was pity and sorrow. For me, going out in the morning and enjoying the air outside is something I’m grateful for, but it’s only possible when several things come together: preparing the night before by going to bed early, and fighting off that feeling in the morning that wants just five more minutes under the blanket. And yet, to ruin the result of all that combination because you couldn’t endure a single moment. I imagine the rest of their day was spent cursing the other person to their family, or replaying it alone and feeling upset.
 
-![cover](../../../../blog/2026-10-27-a-moment-of-compassion/cover.png)
+![Screenshot 2026-10-26 20.52.30.png](./cover.png)
 
 ---
 
