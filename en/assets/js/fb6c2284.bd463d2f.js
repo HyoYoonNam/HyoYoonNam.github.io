@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkdocusaurus_blog_rudevico=globalThis.webpackChunkdocusaurus_blog_rudevico||[]).push([[4222],{6048:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/en/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":16,"previousPage":"/en/","blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
