@@ -1,10 +1,12 @@
 import React from 'react';
 import BlogPostItem from '@theme-original/BlogPostItem';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Giscus from '@giscus/react';
 import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
 
 export default function BlogPostItemWrapper(props) {
   const { metadata, isBlogPostPage } = useBlogPost();
+  const {i18n: {currentLocale}} = useDocusaurusContext();
   const siteUrl = 'https://hyoyoonnam.github.io'; 
 
   // hits.sh 서비스 사용
@@ -18,7 +20,7 @@ export default function BlogPostItemWrapper(props) {
       {/* ------------------------------------------------------- */}
       {isBlogPostPage && (
         <div style={{display: 'flex', justifyContent: 'flex-end', marginBottom: '10px'}}>
-          <a href={`https://hits.sh/${targetPath}/`} title="조회수 상세 보기" style={{textDecoration: 'none'}}>
+          <a href={`https://hits.sh/${targetPath}/`} title={currentLocale === 'ko' ? '조회수 상세 보기' : 'View page views'} style={{textDecoration: 'none'}}>
             <img
               src={hitsImageUrl}
               alt="hits"
@@ -50,7 +52,7 @@ export default function BlogPostItemWrapper(props) {
             emitMetadata="0"
             inputPosition="bottom"
             theme="preferred_color_scheme"
-            lang="ko"
+            lang={currentLocale}
             loading="lazy"
           />
         </div>

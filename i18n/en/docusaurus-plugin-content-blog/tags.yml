@@ -1,0 +1,25 @@
+life:
+  label: Life
+  permalink: /life
+  description: Stories from rudevico’s everyday life
+
+객체지향:
+  label: Object-oriented programming
+  permalink: /object-oriented
+  description: Posts about object-oriented programming
+
+기술:
+  label: Technology
+  permalink: /tech
+
+회고:
+  label: Reflections
+  permalink: /retrospective
+
+Java:
+  label: Java
+  permalink: /java
+
+SQ3R_의식적으로_연습하기:
+  label: Practicing SQ3R
+  permalink: /sq-3-r-의식적으로-연습하기
