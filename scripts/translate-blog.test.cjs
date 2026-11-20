@@ -2,6 +2,7 @@ const {test} = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const matter = require('gray-matter');
+const {createProcessor} = require('@mdx-js/mdx');
 const {translationSegments, applyTranslationSegments, readGlossary, matchesTranslation, postInfo, render, requestTranslation} = require('./translate-blog.cjs');
 
 const source = `---
@@ -166,4 +167,33 @@ test('번역 문장만 교체해 인라인 코드와 HTML, 링크 순서를 유�
   assert.throws(() => applyTranslationSegments(text, segments, []));
   const escaped = applyTranslationSegments(text, segments, segments.map(() => '`new-code` {process.env.SECRET} <script>'));
   render('---\ntitle: 글\nslug: post\n---\n' + text, {title: 'Post', description: null, body: escaped});
+});
+
+test('축약 참조의 표시 문구를 번역해도 원래 링크와 이미지 정의로 연결한다', () => {
+  for (const prefix of ['', '!']) {
+    for (const suffix of ['', '[]', '[한국어]']) {
+      const body = `${prefix}[한국어]${suffix}\n\n[한국어]: https://example.com`;
+      const segments = translationSegments(body);
+      const translated = applyTranslationSegments(body, segments, ['English']);
+      assert.ok(translated.startsWith(`${prefix}[English][한국어]`));
+      const original = '---\ntitle: 글\nslug: post\n---\n' + body;
+      render(original, {title: 'Post', description: null, body: translated});
+      assert.throws(() => render(original, {title: 'Post', description: null, body: translated.replace('[English][한국어]', '[English][missing]')}));
+    }
+  }
+  const body = '[한\\[국어\\]]\n\n[한\\[국어\\]]: https://example.com';
+  const translated = applyTranslationSegments(body, translationSegments(body), ['English']);
+  assert.ok(translated.startsWith('[English][한\\[국어\\]]'));
+  render('---\ntitle: 글\nslug: post\n---\n' + body, {title: 'Post', description: null, body: translated});
+});
+
+test('번역 문장의 목록 표식을 일반 문장으로 표시한다', () => {
+  const body = '한국어 문장입니다.';
+  for (const text of ['- Option A', '+ Option A', '1. First', '1) First', '---']) {
+    const translated = applyTranslationSegments(body, translationSegments(body), [text]);
+    const tree = createProcessor().parse(translated);
+    assert.equal(tree.children.length, 1);
+    assert.equal(tree.children[0].type, 'paragraph');
+    assert.equal(tree.children[0].children[0].value, text);
+  }
 });

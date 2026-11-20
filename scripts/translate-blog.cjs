@@ -81,6 +81,9 @@ function protectedSyntax(body) {
     if (['link', 'image', 'definition'].includes(node.type)) {
       protectedNodes.push([node.type, node.url, node.title]);
     }
+    if (['linkReference', 'imageReference'].includes(node.type)) {
+      protectedNodes.push([node.type, node.identifier]);
+    }
     if (['mdxjsEsm', 'mdxFlowExpression', 'mdxTextExpression'].includes(node.type)) {
       protectedNodes.push([node.type, node.value]);
     }
@@ -123,10 +126,14 @@ function render(sourceText, translated, glossaryHash = readGlossary().fingerprin
   return result;
 }
 
-function translationSegments(body) {
+function translationTree(body) {
   // HTML 주석을 같은 길이의 MDX 주석으로 바꿔 원문 위치를 유지합니다.
   const parseable = body.replace(/<!--([\s\S]*?)-->/g, (_, text) => '{/* ' + text.replace(/\*\//g, '**') + '*/}');
-  const tree = createProcessor().parse(parseable);
+  return createProcessor().parse(parseable);
+}
+
+function translationSegments(body) {
+  const tree = translationTree(body);
   const segments = [];
   function visit(node) {
     if (node.type === 'text' && /\p{Script=Hangul}/u.test(node.value)) {
@@ -153,14 +160,27 @@ function translationSegments(body) {
 function applyTranslationSegments(body, segments, translations) {
   assert.ok(Array.isArray(translations), '번역 문장 배열이 필요합니다.');
   assert.equal(translations.length, segments.length, '번역 문장의 개수가 원문과 다릅니다.');
-  let result = body;
-  for (let i = segments.length - 1; i >= 0; i--) {
+  const replacements = segments.map((segment, i) => {
     assert.ok(typeof translations[i] === 'string' && translations[i].trim(), '번역 문장이 비어 있습니다.');
     const text = translations[i].replace(/[\r\n]+/g, ' ')
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/{/g, '&#123;').replace(/}/g, '&#125;')
-      .replace(/[\\`*_\[\]#!|~]/g, '\\$&');
-    result = result.slice(0, segments[i].start) + text + result.slice(segments[i].end);
+      .replace(/[\\`*_\[\]#!|~+().-]/g, '\\$&');
+    return {...segment, text};
+  });
+  function preserveReferences(node) {
+    if (['linkReference', 'imageReference'].includes(node.type) && node.referenceType !== 'full') {
+      const end = node.position.end.offset;
+      const collapsed = node.referenceType === 'collapsed';
+      const label = body.slice(node.position.start.offset + (node.type === 'imageReference' ? 2 : 1), end - (collapsed ? 3 : 1));
+      replacements.push({start: end - (collapsed ? 2 : 0), end, text: `[${label}]`});
+    }
+    for (const child of node.children || []) preserveReferences(child);
+  }
+  preserveReferences(translationTree(body));
+  let result = body;
+  for (const replacement of replacements.sort((a, b) => b.start - a.start)) {
+    result = result.slice(0, replacement.start) + replacement.text + result.slice(replacement.end);
   }
   return result;
 }
