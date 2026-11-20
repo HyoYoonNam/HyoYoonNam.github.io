@@ -87,7 +87,7 @@ test('Responses 요청 형식, 완료 검사와 일시 오류 재시도를 확�
     if (attempts === 1) return {ok: false, status: 429};
     return {ok: true, json: async () => ({status: 'completed', output: [{content: [{type: 'output_text', text: JSON.stringify({title: translation.title, description: translation.description, translations: ['Hello.', 'A photo']})}]}]})};
   };
-  assert.deepEqual(await requestTranslation(matter(source), [], {fetchImpl, wait: async () => {}}), translation);
+  assert.deepEqual(await requestTranslation(matter(source), [], {fetchImpl, wait: async () => {}}), {...translation, body: translation.body.replace('Hello.', 'Hello\\.')});
   assert.equal(attempts, 2);
   await assert.rejects(requestTranslation(matter(source), [], {fetchImpl: async () => ({ok: false, status: 401})}), /HTTP 401/);
   await assert.rejects(requestTranslation(matter(source), [], {fetchImpl: async () => ({ok: true, json: async () => ({status: 'incomplete'})})}), /완료/);
