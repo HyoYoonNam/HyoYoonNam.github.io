@@ -78,19 +78,25 @@ test('Responses 요청 형식, 완료 검사와 일시 오류 재시도를 확�
     const request = JSON.parse(options.body);
     assert.equal(request.store, false);
     const input = JSON.parse(request.input);
-    assert.deepEqual(input.segments, ['안녕하세요.', '사진']);
+    assert.deepEqual(input.segments, {segment_0: '안녕하세요.', segment_1: '사진'});
     assert.deepEqual(input.glossary, readGlossary().glossary);
     assert.ok(input.glossary.terms.some(term => term.korean === '우테코' && term.english === 'Woowacourse'));
     assert.equal(request.text.format.type, 'json_schema');
     assert.equal(request.text.format.strict, true);
+    assert.deepEqual(request.text.format.schema.properties.translations.required, ['segment_0', 'segment_1']);
+    assert.equal(request.text.format.schema.properties.translations.additionalProperties, false);
     attempts++;
     if (attempts === 1) return {ok: false, status: 429};
-    return {ok: true, json: async () => ({status: 'completed', output: [{content: [{type: 'output_text', text: JSON.stringify({title: translation.title, description: translation.description, translations: ['Hello.', 'A photo']})}]}]})};
+    return {ok: true, json: async () => ({status: 'completed', output: [{content: [{type: 'output_text', text: JSON.stringify({title: translation.title, description: translation.description, translations: {segment_1: 'A photo', segment_0: 'Hello.'}})}]}]})};
   };
   assert.deepEqual(await requestTranslation(matter(source), [], {fetchImpl, wait: async () => {}}), {...translation, body: translation.body.replace('Hello.', 'Hello\\.')});
   assert.equal(attempts, 2);
   await assert.rejects(requestTranslation(matter(source), [], {fetchImpl: async () => ({ok: false, status: 401})}), /HTTP 401/);
   await assert.rejects(requestTranslation(matter(source), [], {fetchImpl: async () => ({ok: true, json: async () => ({status: 'incomplete'})})}), /완료/);
+  for (const translations of [{segment_0: 'Hello.'}, {segment_0: 'Hello.', segment_1: 'A photo', segment_2: 'Extra'}]) {
+    const fetchImpl = async () => ({ok: true, json: async () => ({status: 'completed', output: [{content: [{type: 'output_text', text: JSON.stringify({title: translation.title, description: translation.description, translations})}]}]})});
+    await assert.rejects(requestTranslation(matter(source), [], {fetchImpl}), /식별자/);
+  }
 });
 
 test('자동 실행의 추가, 수정 감지와 수동 실행의 누락 글 탐색을 확인한다', () => {
