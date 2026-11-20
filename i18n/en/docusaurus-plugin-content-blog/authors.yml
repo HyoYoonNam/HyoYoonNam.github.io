@@ -1,0 +1,11 @@
+hyoyoonnam:
+  name: Hyoyoon Nam
+  title: Software Engineer
+  url: https://linkedin.com/in/hyoyoonnam
+  image_url: https://github.com/hyoyoonnam.png
+  page: false
+  description: "I’m a software engineer with a background in backend development."
+  socials:
+    linkedin: hyoyoonnam
+    github: hyoyoonnam
+    email: dev.rudevico@gmail.com
